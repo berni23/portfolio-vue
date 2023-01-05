@@ -1,13 +1,14 @@
-import Uab from "./assets/images/uab.png";
-import Mnet from "./assets/images/mnet.png";
-import LMU from "./assets/images/LMU.png";
-import assembler from "./assets/images/assembler.png";
-import Bekodo from "./assets/images/bekodo.svg";
+import Uab from "./../assets/images/uab.png";
+import Mnet from "./../assets/images/mnet.png";
+import LMU from "./../assets/images/LMU.png";
+import assembler from "./../assets/images/assembler.png";
+import Bekodo from "./../assets/images/bekodo.svg";
 
-import Meetaitech from "./assets/images/meetaitech.png";
+import Meetaitech from "./../assets/images/meetaitech.png";
 
 const data = [
   {
+
     title: "Fullstack at Meetaitech",
     date: "April 2021-Now",
     text:
@@ -17,10 +18,10 @@ const data = [
 
     img: Meetaitech,
     location: "Barcelona",
-    category: {
+    categories: [{
       tag: "work",
       color: "#FF8C00",
-    },
+    }],
 
     tags: ["PHP", "Javascript", "Laravel", "Vue", "Vuex"],
 
@@ -38,10 +39,11 @@ const data = [
 
     img: Bekodo,
     location: "Barcelona",
-    category: {
+    categories: [{
       tag: "work",
       color: "#FF8C00",
-    },
+    }],
+
 
     tags: ["python", "javascript", "html", "css", "django", "flask", "git"],
 
@@ -61,15 +63,15 @@ const data = [
 
     img: assembler,
     location: "Barcelona",
-    category: {
+    categories: [{
       tag: "studies",
       color: "#2fbded",
     },
 
-    category2: {
+    {
       tag: "work",
       color: "#FF8C00",
-    },
+    }],
 
     tags: [
       "javascript",
@@ -102,10 +104,10 @@ const data = [
 
     location: "Munich",
 
-    category: {
+    categories: [{
       tag: "work",
       color: "#FF8C00",
-    },
+    }],
 
     tags: ["Excel", "Tableau"],
 
@@ -122,10 +124,10 @@ const data = [
       "Due to of the fact that I did not recieve many constraints from my professor, I was able to develop my programming skills, by designing and developing an interface for the evaluation and comparison of scientific data as a product of the simulations performed.",
     date: "Sept 2017 - Feb 2020",
 
-    category: {
+    categories: [{
       tag: "studies",
       color: "#2fbded",
-    },
+    }],
 
     tags: [
       "physics",
@@ -153,12 +155,10 @@ const data = [
       " I graduated in Physics by the Universitat autònoma, in Barcelona. Coursing the last year in Munich. It gave me insightful kowledge in Maths and Physics, but at the same time I learned how to approach problems of any other field that may require analytical skills, abstract thinking, strategic planning ,evaluation and programming.",
     date: "Sept 2012 - June 2017",
     img: Uab,
-
-    category: {
+    categories: [{
       tag: "studies",
       color: "#2fbded",
-    },
-
+    }],
     link: {
       url: "https://www.uab.cat/en/",
       text: " UAB",
