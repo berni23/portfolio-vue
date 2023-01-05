@@ -1,14 +1,16 @@
 <template>
-  <div class="icons" :class="iconClass">
-    <a :href="githubLink" rel="noreferrer" target="_blank">
-      <img class="github-img" :src="Github" alt="github" />
-    </a>
-    <a :href="linkedinLink" rel="noreferrer" target="_blank">
-      <img :src="Linkedin" class="linkedin-img" alt="linkedin" />
-    </a>
-    <a rel="noreferrer" class="cv" :href="cvLink" target="_blank">
-      <span>CV</span>
-    </a>
+  <div class="icons">
+    <div class="icons__content">
+      <a :href="githubLink" rel="noreferrer" target="_blank">
+        <img class="github-img" :src="Github" alt="github" />
+      </a>
+      <a :href="linkedinLink" rel="noreferrer" target="_blank">
+        <img :src="Linkedin" class="linkedin-img" alt="linkedin" />
+      </a>
+      <a rel="noreferrer" class="cv" :href="cvLink" target="_blank">
+        <span>CV</span>
+      </a>
+    </div>
   </div>
 </template>
 
@@ -23,17 +25,17 @@ export default defineComponent({
 
   setup(props, { emit }) {
     const iconClass = ref("hide");
-    onMounted(() => {
-      setTimeout(() => {
-        iconClass.value = "fade-in";
-      }, 5000);
-    });
+    // onMounted(() => {
+    //   setTimeout(() => {
+    //     iconClass.value = "fade-in";
+    //   }, 5000);
+    // });
 
     return {
       iconClass,
       Github,
       Linkedin,
-      cvLink: "./../assets/docs/CV_bernat.pdf",
+      cvLink: " ./CV_bernat.pdf",
       linkedinLink: "https://www.linkedin.com/in/bernat-ferrer/",
       githubLink: "https://github.com/berni23",
     };
@@ -42,6 +44,18 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
+.icons {
+  text-align: center;
+  margin-top: 120px;
+  z-index:10;
+  justify-content: center;
+  width: 100%;
+  &__content {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+}
 .github-img {
   width: 50px;
   height: 50px;
@@ -55,9 +69,12 @@ export default defineComponent({
 }
 
 .cv {
-  margin-top: 10px;
+  text-align: center;
+  position: relative;
   span {
-    font-size: "3rem";
+    position: absolute;
+    top: 10%;
+    font-size: 3rem;
     font-weight: 900;
     color: white;
   }

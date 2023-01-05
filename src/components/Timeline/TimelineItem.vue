@@ -3,6 +3,12 @@
     <div class="timeline-item__content">
       <div class="timeline-item__content__header">
         <categories :categories="data.categories" />
+
+        <div>
+          <p className="timeline-date timeline-item__content__date">
+            {{ data.date }}
+          </p>
+        </div>
       </div>
     </div>
   </div>
@@ -91,6 +97,10 @@ export default defineComponent({
       display: flex;
       justify-content: space-between;
       flex-direction: row;
+    }
+
+    &__date {
+      font-size: 1rem;
     }
   }
 

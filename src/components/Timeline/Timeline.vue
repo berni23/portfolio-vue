@@ -82,9 +82,6 @@ export default defineComponent({
   font-size: 1.5rem;
   color: #2d5d87;
 }
-.timeline-date {
-  font-size: 1rem;
-}
 
 .text {
   text-align: justify;
@@ -95,6 +92,7 @@ export default defineComponent({
 h1 {
   text-align: center;
 }
+
 
 .timeline-item:nth-child(odd) .header-item {
   flex-direction: row-reverse;
