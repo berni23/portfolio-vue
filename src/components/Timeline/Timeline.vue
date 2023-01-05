@@ -1,7 +1,6 @@
 <template>
   <div class="timeline-wrapper">
     <div class="timeline" v-if="data.length" :class="fadeClass">
-      <icons />
       <div class="timeline__content">
         <timeline-item
           v-for="(item, i) in data"
@@ -38,9 +37,6 @@ export default defineComponent({
 });
 </script>
 <style lang="scss">
-
-
-
 .timeline-wrapper {
   display: flex;
   align-items: center;
@@ -72,16 +68,11 @@ export default defineComponent({
   }
 }
 
-
 .img-timeline {
   height: 35px;
   margin-top: 20px;
 }
 
-.timeline-title {
-  font-size: 1.5rem;
-  color: #2d5d87;
-}
 
 .text {
   text-align: justify;
@@ -92,7 +83,6 @@ export default defineComponent({
 h1 {
   text-align: center;
 }
-
 
 .timeline-item:nth-child(odd) .header-item {
   flex-direction: row-reverse;
@@ -136,6 +126,4 @@ h1 {
   font-size: 12px;
   font-weight: 700;
 }
-
-
 </style>

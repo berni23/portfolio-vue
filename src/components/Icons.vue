@@ -10,6 +10,10 @@
       <a rel="noreferrer" class="cv" :href="cvLink" target="_blank">
         <span>CV</span>
       </a>
+
+      <a :href="stackLink" rel="noreferrer" target="_blank">
+        <img :src="Stack" class="linkedin-img" alt="stack-overflow" />
+      </a>
     </div>
   </div>
 </template>
@@ -18,6 +22,7 @@
 import { defineComponent, onMounted, ref } from "vue-demi";
 import Github from "./../assets/images/github.svg";
 import Linkedin from "./../assets/images/linkedin.svg";
+import Stack from "./../assets/images/stack-overflow.svg";
 
 export default defineComponent({
   name: "Icons",
@@ -35,19 +40,24 @@ export default defineComponent({
       iconClass,
       Github,
       Linkedin,
+      Stack,
       cvLink: " ./CV_bernat.pdf",
       linkedinLink: "https://www.linkedin.com/in/bernat-ferrer/",
       githubLink: "https://github.com/berni23",
+      stackLink: "https://stackoverflow.com/users/7569812/berni",
     };
   },
 });
 </script>
 
 <style lang="scss">
+.hide {
+  display: none;
+}
 .icons {
   text-align: center;
   margin-top: 120px;
-  z-index:10;
+  z-index: 10;
   justify-content: center;
   width: 100%;
   &__content {
@@ -73,7 +83,6 @@ export default defineComponent({
   position: relative;
   span {
     position: absolute;
-    top: 10%;
     font-size: 3rem;
     font-weight: 900;
     color: white;

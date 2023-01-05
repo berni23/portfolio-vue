@@ -10,6 +10,17 @@
           </p>
         </div>
       </div>
+
+      <div class="timeline-item__content__content">
+        <p class="timeline-item__content__content__title">
+          {{ data.title }}
+        </p>
+        <br />
+
+        <p class="timeline-item__content__content__text">
+          {{ data.text }}
+        </p>
+      </div>
     </div>
   </div>
 </template>
@@ -48,23 +59,27 @@ export default defineComponent({
 
   &:nth-child(odd) {
     flex-direction: row-reverse;
-  }
-  &:nth-child(odd) &__content {
-    align-items: flex-start;
-    text-align: left;
-  }
-
-  &:nth-child(odd) &__content::after {
-    box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.2);
-    right: auto;
-    left: -20px;
-  }
-
-  &:nth-child(odd) {
     align-self: flex-end;
     justify-content: flex-start;
     padding-right: 0px;
     padding-left: 30px;
+
+    .timeline-item {
+      &__content {
+        align-items: flex-start;
+        text-align: left;
+
+        &__header {
+          flex-direction: row-reverse;
+        }
+
+        &::after {
+          box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.2);
+          right: auto;
+          left: -20px;
+        }
+      }
+    }
   }
 
   &__content {
@@ -97,10 +112,24 @@ export default defineComponent({
       display: flex;
       justify-content: space-between;
       flex-direction: row;
+      margin-bottom: 10px;
     }
 
     &__date {
       font-size: 1rem;
+    }
+
+    &__content {
+      &__title {
+        font-size: 1.5rem;
+        color: #2d5d87;
+      }
+
+      &__text {
+        text-align: justify;
+        color: #777;
+        font-size: 1rem;
+      }
     }
   }
 

@@ -1,8 +1,8 @@
 <template>
-        <div v-for="category in categories" :key="category.tag" >
-          <span class="tag" :style="{ background: category.color }">
-            {{ category.tag }}
-          </span>
+  <div v-for="category in categories" :key="category.tag">
+    <span class="tag" :style="{ background: category.color }">
+      {{ category.tag }}
+    </span>
   </div>
 </template>
 
@@ -15,8 +15,18 @@ export default defineComponent({
   components: {},
 
   setup(props, { emit }) {
-    return { categories:props.categories };
+    return { categories: props.categories };
   },
 });
 </script>
-<style lang="scss"></style>
+<style lang="scss">
+.tag {
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 5px;
+  margin: 0 5px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+</style>

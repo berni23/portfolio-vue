@@ -2,7 +2,7 @@
   <background />
   <navbar />
   <icons />
-  <!-- <timeline /> -->
+  <timeline />
 </template>
 
 <script lang="ts">
