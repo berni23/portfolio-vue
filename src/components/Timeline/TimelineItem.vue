@@ -3,6 +3,39 @@
     <div class="timeline-item__content">
       <div class="timeline-item__content__header">
         <categories :categories="data.categories" />
+
+        <div>
+          <p className="timeline-date timeline-item__content__date">
+            {{ data.date }}
+          </p>
+        </div>
+      </div>
+
+      <div class="timeline-item__content__content">
+        <p class="timeline-item__content__content__title">
+          {{ data.title }}
+        </p>
+        <br />
+
+        <p class="timeline-item__content__content__text">
+          {{ data.text }}
+        </p>
+
+        <a v-if="data.link.url" :href="data.link.url">
+          <img
+            v-if="data.img"
+            :src="data.img"
+            class="timeline-item__content__content__img"
+          />
+        </a>
+
+        <ul class="timeline-item__content__content__taglist">
+          <li class="hashtag" v-for="tag in data.tags" :key="tag">
+            #{{ tag }}
+          </li>
+        </ul>
+
+        <span class="circle"></span>
       </div>
     </div>
   </div>
@@ -34,31 +67,40 @@ export default defineComponent({
 
 .timeline-item {
   display: flex;
+  justify-content: flex-start !important;
+  justify-content: flex-end !important;
+  right: 40px;
   position: relative;
-  justify-content: flex-end;
-  padding-right: 30px;
-  margin: 10px 0;
   width: 50%;
 
+  flex-direction: row;
+  align-self: flex-start;
   &:nth-child(odd) {
     flex-direction: row-reverse;
-  }
-  &:nth-child(odd) &__content {
-    align-items: flex-start;
-    text-align: left;
-  }
-
-  &:nth-child(odd) &__content::after {
-    box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.2);
-    right: auto;
-    left: -20px;
-  }
-
-  &:nth-child(odd) {
     align-self: flex-end;
-    justify-content: flex-start;
-    padding-right: 0px;
-    padding-left: 30px;
+
+    left: 32px;
+
+    .timeline-item__content {
+      align-items: flex-start;
+      text-align: left;
+
+      &__header {
+        flex-direction: row-reverse;
+      }
+
+      &::after {
+        box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.2);
+        right: auto;
+        left: -20px;
+      }
+      &__content {
+        .circle {
+          right: auto;
+          left: -45px;
+        }
+      }
+    }
   }
 
   &__content {
@@ -72,7 +114,8 @@ export default defineComponent({
     box-shadow: 0 0 5px rgba(126, 200, 178, 0.7);
     background-color: #fff;
     max-width: 70%;
-    width: 600px;
+
+    position: relative;
 
     &::after {
       content: "";
@@ -91,32 +134,73 @@ export default defineComponent({
       display: flex;
       justify-content: space-between;
       flex-direction: row;
+      margin-bottom: 10px;
     }
-  }
 
-  .taglist {
-    &__:nth-child(odd) {
-      margin-top: 20px;
-      display: flex;
-      flex-wrap: wrap;
-      width: 100%;
+    &__date {
+      font-size: 1rem;
+    }
 
-      * {
-        float: left;
+    &__content {
+      &__img {
+        height: 50px !important;
+        margin-top: 20px;
       }
-    }
+      .circle {
+        background-color: rgb(0, 0, 0);
+        border: 2px solid#fff;
+        border-radius: 50%;
+        position: absolute;
+        top: calc(50% - 10px);
+        right: auto;
 
-    .hashtag {
-      padding: 2px 4px;
-      list-style-type: none;
-      display: inline;
-      border-radius: 3px;
-      border: 1px solid #efeae1;
-      background-color: #f8f6f2;
-      color: #9e9b95 !important;
-      margin-right: 10px !important;
-      margin-top: 10px;
-      overflow: hidden;
+        left: 340px;
+        width: 20px;
+        height: 20px;
+        z-index: 100;
+      }
+
+      &__time {
+        color: #777;
+        font-size: 12px;
+        font-weight: 700;
+      }
+      &__title {
+        font-size: 1.5rem;
+        color: #2d5d87;
+      }
+
+      &__text {
+        text-align: justify;
+        color: #777;
+        font-size: 1rem;
+      }
+
+      &__taglist {
+        &:nth-child(odd) {
+          margin-top: 20px;
+          display: flex;
+          flex-wrap: wrap;
+          width: 100%;
+
+          * {
+            float: left;
+          }
+        }
+
+        .hashtag {
+          padding: 2px 4px;
+          list-style-type: none;
+          display: inline;
+          border-radius: 3px;
+          border: 1px solid #efeae1;
+          background-color: #f8f6f2;
+          color: #9e9b95 !important;
+          margin-right: 10px !important;
+          margin-top: 10px;
+          overflow: hidden;
+        }
+      }
     }
   }
 }

@@ -1,14 +1,20 @@
 <template>
-  <div class="icons" :class="iconClass">
-    <a :href="githubLink" rel="noreferrer" target="_blank">
-      <img class="github-img" :src="Github" alt="github" />
-    </a>
-    <a :href="linkedinLink" rel="noreferrer" target="_blank">
-      <img :src="Linkedin" class="linkedin-img" alt="linkedin" />
-    </a>
-    <a rel="noreferrer" class="cv" :href="cvLink" target="_blank">
-      <span>CV</span>
-    </a>
+  <div class="icons">
+    <div class="icons__content">
+      <a :href="githubLink" rel="noreferrer" target="_blank">
+        <img class="github-img" :src="Github" alt="github" />
+      </a>
+      <a :href="linkedinLink" rel="noreferrer" target="_blank">
+        <img :src="Linkedin" class="linkedin-img" alt="linkedin" />
+      </a>
+      <a rel="noreferrer" class="cv" :href="cvLink" target="_blank">
+        <span>CV</span>
+      </a>
+
+      <a :href="stackLink" rel="noreferrer" target="_blank">
+        <img :src="Stack" class="linkedin-img" alt="stack-overflow" />
+      </a>
+    </div>
   </div>
 </template>
 
@@ -16,6 +22,7 @@
 import { defineComponent, onMounted, ref } from "vue-demi";
 import Github from "./../assets/images/github.svg";
 import Linkedin from "./../assets/images/linkedin.svg";
+import Stack from "./../assets/images/stack-overflow.svg";
 
 export default defineComponent({
   name: "Icons",
@@ -23,25 +30,42 @@ export default defineComponent({
 
   setup(props, { emit }) {
     const iconClass = ref("hide");
-    onMounted(() => {
-      setTimeout(() => {
-        iconClass.value = "fade-in";
-      }, 5000);
-    });
+    // onMounted(() => {
+    //   setTimeout(() => {
+    //     iconClass.value = "fade-in";
+    //   }, 5000);
+    // });
 
     return {
       iconClass,
       Github,
       Linkedin,
-      cvLink: "./../assets/docs/CV_bernat.pdf",
+      Stack,
+      cvLink: " ./CV_bernat.pdf",
       linkedinLink: "https://www.linkedin.com/in/bernat-ferrer/",
       githubLink: "https://github.com/berni23",
+      stackLink: "https://stackoverflow.com/users/7569812/berni",
     };
   },
 });
 </script>
 
 <style lang="scss">
+.hide {
+  display: none;
+}
+.icons {
+  text-align: center;
+  margin-top: 120px;
+  z-index: 10;
+  justify-content: center;
+  width: 100%;
+  &__content {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+}
 .github-img {
   width: 50px;
   height: 50px;
@@ -55,9 +79,11 @@ export default defineComponent({
 }
 
 .cv {
-  margin-top: 10px;
+  text-align: center;
+  position: relative;
   span {
-    font-size: "3rem";
+    position: absolute;
+    font-size: 3rem;
     font-weight: 900;
     color: white;
   }
