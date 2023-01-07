@@ -1,5 +1,5 @@
 <template>
-  <div class="timeline-item" :class="itemClass">
+  <div class="timeline-item" :class="itemClass" :style="{ bottom }">
     <div class="timeline-item__content">
       <div class="timeline-item__content__header">
         <categories :categories="data.categories" />
@@ -51,20 +51,24 @@ export default defineComponent({
   components: { categories },
 
   setup(props, { emit }) {
+    const bottom = ref((props.id * 100).toString() + "px");
     const render = ref(false);
-    const itemClass = computed(() => (render ? "fade-in" : "hide"));
+    const itemClass = computed(() => (render.value ? "fade-in" : "hide"));
     const timer = setTimeout(() => {
       render.value = true;
       clearTimeout(timer);
-    }, 600 + props.id * 500);
+    }, 600 + props.id * 900);
 
-    return { itemClass, data: props.data };
+    return { itemClass, data: props.data, bottom };
   },
 });
 </script>
 <style lang="scss">
 @import url("https://fonts.googleapis.com/css?family=Lato");
 
+.hide {
+  display: none;
+}
 .timeline-item {
   display: flex;
   justify-content: flex-start !important;
@@ -102,7 +106,6 @@ export default defineComponent({
       }
     }
   }
-
   &__content {
     display: flex;
     flex-direction: column;

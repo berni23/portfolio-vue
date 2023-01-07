@@ -29,7 +29,7 @@ export default defineComponent({
     onMounted(() => {
       setTimeout(() => {
         fadeClass.value = "fade-in";
-      }, 5000);
+      }, 1500);
     });
 
     return { fadeClass, data };
@@ -46,7 +46,6 @@ export default defineComponent({
   font-family: "Lato", sans-serif;
   margin: 0;
   color: black;
-  margin-top: 300px;
 }
 
 .timeline {

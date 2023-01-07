@@ -57,13 +57,22 @@ export default defineComponent({
 .icons {
   text-align: center;
   margin-top: 120px;
+
   z-index: 10;
   justify-content: center;
   width: 100%;
+  height: 200px;
   &__content {
+
+    a{
+
+      margin:auto;
+    }
     display: flex;
     justify-content: center;
     text-align: center;
+
+
   }
 }
 .github-img {
