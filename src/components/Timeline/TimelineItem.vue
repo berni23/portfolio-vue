@@ -152,10 +152,8 @@ export default defineComponent({
         border-radius: 50%;
         position: absolute;
         top: calc(50% - 10px);
-        right: auto;
-
-        left: 340px;
         width: 20px;
+        right: -50px;
         height: 20px;
         z-index: 100;
       }
