@@ -67,15 +67,19 @@ export default defineComponent({
 
 .timeline-item {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start !important;
+  justify-content: flex-end !important;
+  right: 40px;
+  position: relative;
   width: 50%;
 
-  // justify-content: space-around;
+  flex-direction: row;
+  align-self: flex-start;
   &:nth-child(odd) {
     flex-direction: row-reverse;
     align-self: flex-end;
 
-    margin-right: 14px;
+    left: 32px;
 
     .timeline-item__content {
       align-items: flex-start;
@@ -90,13 +94,9 @@ export default defineComponent({
         right: auto;
         left: -20px;
       }
-
-      position: relative;
-
       &__content {
         .circle {
           right: auto;
-          left: -45px;
           left: -45px;
         }
       }
@@ -114,6 +114,8 @@ export default defineComponent({
     box-shadow: 0 0 5px rgba(126, 200, 178, 0.7);
     background-color: #fff;
     max-width: 70%;
+
+    position: relative;
 
     &::after {
       content: "";
@@ -150,7 +152,9 @@ export default defineComponent({
         border-radius: 50%;
         position: absolute;
         top: calc(50% - 10px);
-        right: -10px;
+        right: auto;
+
+        left: 340px;
         width: 20px;
         height: 20px;
         z-index: 100;
