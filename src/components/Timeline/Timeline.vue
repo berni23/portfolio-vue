@@ -15,15 +15,14 @@
 
 <script lang="ts">
 import { defineComponent, ref, onMounted } from "vue-demi";
-
+import isMobile from "../../Logic/Utils/isMobile";
 import data from "../../data/cv";
-import Icons from "../Icons.vue";
 import TimelineItem from "./TimelineItem.vue";
 
 export default defineComponent({
   name: "Timeline",
 
-  components: { Icons, TimelineItem },
+  components: { TimelineItem },
   setup(props, { emit }) {
     const fadeClass = ref("hide");
     onMounted(() => {
@@ -32,7 +31,7 @@ export default defineComponent({
       }, 1500);
     });
 
-    return { fadeClass, data };
+    return { fadeClass, data, isMobile };
   },
 });
 </script>
@@ -84,4 +83,19 @@ export default defineComponent({
 h1 {
   text-align: center;
 }
+
+// @media screen and (min-width: 800px) {
+//   .timeline {
+//     &__content {
+//       &::after {
+//         background-color: #ffc107;
+//         content: "";
+//         position: absolute;
+//         left: calc(50% - 2px);
+//         width: 2px;
+//         height: 100%;
+//       }
+//     }
+//   }
+// }
 </style>

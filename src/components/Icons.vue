@@ -46,8 +46,6 @@ import Stack from "./../assets/images/stack-overflow.svg";
 
 export default defineComponent({
   name: "Icons",
-  components: {},
-
   setup(props, { emit }) {
     const iconClass = ref("hide");
     return {
@@ -70,7 +68,7 @@ export default defineComponent({
 .icons {
   margin-top: 150px !important;
   z-index: 10;
-  height: 200px;
+  height: 150px;
   flex-wrap: wrap;
   margin-top: 120px;
   text-align: center;
@@ -111,11 +109,10 @@ export default defineComponent({
 }
 
 .cv {
-  // width: 50px;
-  // height: 50px;
+  margin-bottom: 35px;
   span {
     position: absolute;
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 900;
     color: white;
   }
@@ -125,8 +122,9 @@ export default defineComponent({
   animation: fadeIn ease 5s;
 }
 
-@media only screen and (max-width: 800px) {
+@media screen and (max-width: 800px) {
   .icons {
+    height: 50px;
     &__content {
       width: 90%;
     }
