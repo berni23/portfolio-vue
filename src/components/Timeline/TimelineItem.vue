@@ -51,18 +51,13 @@ export default defineComponent({
 
 .timeline-item {
   display: flex;
-  position: relative;
+  // position: relative;
   justify-content: flex-end;
-  padding-right: 30px;
-  margin: 10px 0;
   width: 50%;
-
+  justify-content: space-around;
   &:nth-child(odd) {
     flex-direction: row-reverse;
     align-self: flex-end;
-    justify-content: flex-start;
-    padding-right: 0px;
-    padding-left: 30px;
 
     .timeline-item {
       &__content {
@@ -93,7 +88,7 @@ export default defineComponent({
     box-shadow: 0 0 5px rgba(126, 200, 178, 0.7);
     background-color: #fff;
     max-width: 70%;
-    width: 600px;
+    // width: 600px;
 
     &::after {
       content: "";
