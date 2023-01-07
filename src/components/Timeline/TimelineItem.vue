@@ -20,6 +20,22 @@
         <p class="timeline-item__content__content__text">
           {{ data.text }}
         </p>
+
+        <a v-if="data.link.url" :href="data.link.url">
+          <img
+            v-if="data.img"
+            :src="data.img"
+            class="timeline-item__content__content__img"
+          />
+        </a>
+
+        <ul class="timeline-item__content__content__taglist">
+          <li class="hashtag" v-for="tag in data.tags" :key="tag">
+            #{{ tag }}
+          </li>
+        </ul>
+
+        <span class="circle"></span>
       </div>
     </div>
   </div>
@@ -51,27 +67,37 @@ export default defineComponent({
 
 .timeline-item {
   display: flex;
-  // position: relative;
-  justify-content: flex-end;
+  justify-content: center;
   width: 50%;
-  justify-content: space-around;
+
+  // justify-content: space-around;
   &:nth-child(odd) {
     flex-direction: row-reverse;
     align-self: flex-end;
 
-    .timeline-item {
+    margin-right: 14px;
+
+    .timeline-item__content {
+      align-items: flex-start;
+      text-align: left;
+
+      &__header {
+        flex-direction: row-reverse;
+      }
+
+      &::after {
+        box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.2);
+        right: auto;
+        left: -20px;
+      }
+
+      position: relative;
+
       &__content {
-        align-items: flex-start;
-        text-align: left;
-
-        &__header {
-          flex-direction: row-reverse;
-        }
-
-        &::after {
-          box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.2);
+        .circle {
           right: auto;
-          left: -20px;
+          left: -45px;
+          left: -45px;
         }
       }
     }
@@ -88,7 +114,6 @@ export default defineComponent({
     box-shadow: 0 0 5px rgba(126, 200, 178, 0.7);
     background-color: #fff;
     max-width: 70%;
-    // width: 600px;
 
     &::after {
       content: "";
@@ -115,6 +140,27 @@ export default defineComponent({
     }
 
     &__content {
+      &__img {
+        height: 50px !important;
+        margin-top: 20px;
+      }
+      .circle {
+        background-color: rgb(0, 0, 0);
+        border: 2px solid#fff;
+        border-radius: 50%;
+        position: absolute;
+        top: calc(50% - 10px);
+        right: -10px;
+        width: 20px;
+        height: 20px;
+        z-index: 100;
+      }
+
+      &__time {
+        color: #777;
+        font-size: 12px;
+        font-weight: 700;
+      }
       &__title {
         font-size: 1.5rem;
         color: #2d5d87;
@@ -125,32 +171,32 @@ export default defineComponent({
         color: #777;
         font-size: 1rem;
       }
-    }
-  }
 
-  .taglist {
-    &__:nth-child(odd) {
-      margin-top: 20px;
-      display: flex;
-      flex-wrap: wrap;
-      width: 100%;
+      &__taglist {
+        &:nth-child(odd) {
+          margin-top: 20px;
+          display: flex;
+          flex-wrap: wrap;
+          width: 100%;
 
-      * {
-        float: left;
+          * {
+            float: left;
+          }
+        }
+
+        .hashtag {
+          padding: 2px 4px;
+          list-style-type: none;
+          display: inline;
+          border-radius: 3px;
+          border: 1px solid #efeae1;
+          background-color: #f8f6f2;
+          color: #9e9b95 !important;
+          margin-right: 10px !important;
+          margin-top: 10px;
+          overflow: hidden;
+        }
       }
-    }
-
-    .hashtag {
-      padding: 2px 4px;
-      list-style-type: none;
-      display: inline;
-      border-radius: 3px;
-      border: 1px solid #efeae1;
-      background-color: #f8f6f2;
-      color: #9e9b95 !important;
-      margin-right: 10px !important;
-      margin-top: 10px;
-      overflow: hidden;
     }
   }
 }

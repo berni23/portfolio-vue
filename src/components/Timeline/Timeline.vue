@@ -50,6 +50,11 @@ export default defineComponent({
 }
 
 .timeline {
+  display: flex;
+  flex-direction: column;
+  margin: 40px 0;
+  min-width: 100%;
+  position: relative;
   &__content {
     display: flex;
     position: relative;
@@ -73,7 +78,6 @@ export default defineComponent({
   margin-top: 20px;
 }
 
-
 .text {
   text-align: justify;
   color: #777;
@@ -82,48 +86,5 @@ export default defineComponent({
 
 h1 {
   text-align: center;
-}
-
-.timeline-item:nth-child(odd) .header-item {
-  flex-direction: row-reverse;
-}
-
-.timeline-item-content .tag {
-  color: #fff;
-  font-size: 12px;
-  font-weight: bold;
-  padding: 5px;
-  margin: 0 5px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-
-.timeline-item:nth-child(odd) .timeline-item-content .tag {
-  float: right;
-  left: auto;
-  left: 205px;
-}
-
-.timeline-item-content .circle {
-  background-color: rgb(0, 0, 0);
-  border: 2px solid#fff;
-  border-radius: 50%;
-  position: absolute;
-  top: calc(50% - 10px);
-  right: -10px;
-  width: 20px;
-  height: 20px;
-  z-index: 100;
-}
-
-.timeline-item:nth-child(odd) .timeline-item-content .circle {
-  right: auto;
-  left: -10px;
-}
-
-.timeline-item-content time {
-  color: #777;
-  font-size: 12px;
-  font-weight: 700;
 }
 </style>
