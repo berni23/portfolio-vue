@@ -10,4 +10,9 @@ export default defineComponent({
   setUp() {},
 });
 </script>
-<style lang="scss"></style>
+<style lang="scss">
+.hide {
+  display: none;
+  opacity: 0;
+}
+</style>

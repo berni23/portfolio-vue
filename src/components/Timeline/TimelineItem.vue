@@ -66,9 +66,6 @@ export default defineComponent({
 <style lang="scss">
 @import url("https://fonts.googleapis.com/css?family=Lato");
 
-.hide {
-  display: none;
-}
 .timeline-item {
   display: flex;
   justify-content: flex-start !important;

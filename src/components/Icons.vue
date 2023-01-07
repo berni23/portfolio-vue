@@ -1,17 +1,37 @@
 <template>
   <div class="icons">
     <div class="icons__content">
-      <a :href="githubLink" rel="noreferrer" target="_blank">
+      <a
+        :href="githubLink"
+        class="icons__content__icon"
+        rel="noreferrer"
+        target="_blank"
+      >
         <img class="github-img" :src="Github" alt="github" />
       </a>
-      <a :href="linkedinLink" rel="noreferrer" target="_blank">
+      <a
+        :href="linkedinLink"
+        class="icons__content__icon"
+        rel="noreferrer"
+        target="_blank"
+      >
         <img :src="Linkedin" class="linkedin-img" alt="linkedin" />
       </a>
-      <a rel="noreferrer" class="cv" :href="cvLink" target="_blank">
+      <a
+        rel="noreferrer"
+        class="cv icons__content__icon"
+        :href="cvLink"
+        target="_blank"
+      >
         <span>CV</span>
       </a>
 
-      <a :href="stackLink" rel="noreferrer" target="_blank">
+      <a
+        :href="stackLink"
+        class="icons__content__icon"
+        rel="noreferrer"
+        target="_blank"
+      >
         <img :src="Stack" class="linkedin-img" alt="stack-overflow" />
       </a>
     </div>
@@ -30,18 +50,12 @@ export default defineComponent({
 
   setup(props, { emit }) {
     const iconClass = ref("hide");
-    // onMounted(() => {
-    //   setTimeout(() => {
-    //     iconClass.value = "fade-in";
-    //   }, 5000);
-    // });
-
     return {
       iconClass,
       Github,
       Linkedin,
       Stack,
-      cvLink: " ./CV_bernat.pdf",
+      cvLink: " ./CV_Bernat.pdf",
       linkedinLink: "https://www.linkedin.com/in/bernat-ferrer/",
       githubLink: "https://github.com/berni23",
       stackLink: "https://stackoverflow.com/users/7569812/berni",
@@ -51,28 +65,37 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
-.hide {
-  display: none;
-}
+@import "../assets/scss/keyframes.scss";
+
 .icons {
-  text-align: center;
-  margin-top: 120px;
-
+  margin-top: 150px !important;
   z-index: 10;
-  justify-content: center;
-  width: 100%;
   height: 200px;
+  flex-wrap: wrap;
+  margin-top: 120px;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 100px;
+  text-decoration: none;
+
   &__content {
-
-    a{
-
-      margin:auto;
-    }
     display: flex;
-    justify-content: center;
     text-align: center;
+    align-items: center;
+    justify-content: space-between;
+    width: 70%;
+    &__icon {
+      width: 50px;
+      &:nth-child(odd) {
+        animation: float 6s 3s ease-in-out infinite, fadeIn ease 5s;
+      }
 
-
+      &:nth-child(even) {
+        animation: float 6s ease-in-out infinite, fadeIn ease 5s;
+      }
+    }
   }
 }
 .github-img {
@@ -88,8 +111,8 @@ export default defineComponent({
 }
 
 .cv {
-  text-align: center;
-  position: relative;
+  // width: 50px;
+  // height: 50px;
   span {
     position: absolute;
     font-size: 3rem;
@@ -98,52 +121,15 @@ export default defineComponent({
   }
 }
 
-.hide {
-  opacity: 0;
-}
-
 .fade-in {
   animation: fadeIn ease 5s;
 }
-.icons {
-  display: flex;
-  margin-bottom: 100px;
-  a {
-    text-decoration: none;
-  }
-  a:not(:last-child) {
-    margin-right: 230px;
-  }
 
-  a:nth-child(odd) {
-    animation: float 6s 3s ease-in-out infinite, fadeIn ease 5s;
-  }
-  a:nth-child(even) {
-    animation: float 6s ease-in-out infinite, fadeIn ease 5s;
-  }
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes float {
-  0% {
-    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
-    transform: translatey(0px);
-  }
-  50% {
-    box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2);
-    transform: translatey(-20px);
-  }
-  100% {
-    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
-    transform: translatey(0px);
+@media only screen and (max-width: 800px) {
+  .icons {
+    &__content {
+      width: 90%;
+    }
   }
 }
 </style>

@@ -51,7 +51,6 @@ export default defineComponent({
 .timeline {
   display: flex;
   flex-direction: column;
-  margin: 40px 0;
   min-width: 100%;
   position: relative;
   &__content {
@@ -59,7 +58,6 @@ export default defineComponent({
     position: relative;
     min-width: 100%;
     flex-direction: column;
-    margin: 40px 0;
 
     &::after {
       background-color: #ffc107;
