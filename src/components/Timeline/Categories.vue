@@ -1,8 +1,13 @@
 <template>
-  <div v-for="category in categories" :key="category.tag">
-    <span class="tag" :style="{ background: category.color }">
+  <div class="categories">
+    <div
+      v-for="category in categories"
+      class="tag"
+      :key="category.tag"
+      :style="{ background: category.color }"
+    >
       {{ category.tag }}
-    </span>
+    </div>
   </div>
 </template>
 
@@ -20,6 +25,10 @@ export default defineComponent({
 });
 </script>
 <style lang="scss">
+.categories {
+  display: flex;
+  flex-direction: row !important;
+}
 .tag {
   color: #fff;
   font-size: 12px;

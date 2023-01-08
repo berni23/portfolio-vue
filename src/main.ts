@@ -6,6 +6,7 @@ import {createPinia} from "pinia";
 // import {Notify, Quasar} from 'quasar'
 
 import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
+
 // // Import icon libraries
 // import '@quasar/extras/material-icons/material-icons.css'
 // import '@quasar/extras/material-symbols-outlined/material-symbols-outlined.css'

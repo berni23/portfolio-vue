@@ -1,23 +1,34 @@
 <template>
   <background />
-  <navbar />
+  <navbar id="landing" />
   <icons />
-  <timeline />
+
+  <div>
+    <timeline-resp v-if="isMobile" id="timeline" />
+    <timeline v-else id="timeline" />
+  </div>
+
+  <div id="projects"></div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue-demi";
 import Background from "../components/Background.vue";
+import isMobile from "../Logic/Utils/isMobile";
+
 import Navbar from "../components/Navbar.vue";
 
 import Icons from "../components/Icons.vue";
 import Timeline from "../components/Timeline/Timeline.vue";
+import TimelineResp from "../components/Timeline/TimelineResp.vue";
 
 export default defineComponent({
   name: "HomeView",
-  components: { Background, Navbar, Timeline, Icons },
+  components: { Background, Navbar, Timeline, Icons, TimelineResp },
 
-  setup(props, { emit }) {},
+  setup(props, { emit }) {
+    return { isMobile };
+  },
 });
 </script>
 <style lang="scss">

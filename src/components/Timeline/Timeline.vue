@@ -1,13 +1,17 @@
 <template>
-  <div class="timeline-wrapper">
-    <div class="timeline" v-if="data.length" :class="fadeClass">
-      <div class="timeline__content">
-        <timeline-item
-          v-for="(item, i) in data"
-          :key="item.title"
-          :data="item"
-          :id="i"
-        />
+  <div>
+    <sectionTitle :section-title="'Timeline'" />
+    <h3 class="section-title">timeline</h3>
+    <div class="timeline-wrapper">
+      <div class="timeline" v-if="data.length" :class="fadeClass">
+        <div class="timeline__content">
+          <timeline-item
+            v-for="(item, i) in data"
+            :key="item.title"
+            :data="item"
+            :id="i"
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -15,24 +19,24 @@
 
 <script lang="ts">
 import { defineComponent, ref, onMounted } from "vue-demi";
-
+import isMobile from "../../Logic/Utils/isMobile";
 import data from "../../data/cv";
-import Icons from "../Icons.vue";
 import TimelineItem from "./TimelineItem.vue";
+import Title from "../common/SectionTitle.vue";
 
 export default defineComponent({
   name: "Timeline",
 
-  components: { Icons, TimelineItem },
+  components: { TimelineItem, Title },
   setup(props, { emit }) {
     const fadeClass = ref("hide");
     onMounted(() => {
       setTimeout(() => {
         fadeClass.value = "fade-in";
-      }, 5000);
+      }, 1500);
     });
 
-    return { fadeClass, data };
+    return { fadeClass, data, isMobile };
   },
 });
 </script>
@@ -46,13 +50,11 @@ export default defineComponent({
   font-family: "Lato", sans-serif;
   margin: 0;
   color: black;
-  margin-top: 300px;
 }
 
 .timeline {
   display: flex;
   flex-direction: column;
-  margin: 40px 0;
   min-width: 100%;
   position: relative;
   &__content {
@@ -60,7 +62,6 @@ export default defineComponent({
     position: relative;
     min-width: 100%;
     flex-direction: column;
-    margin: 40px 0;
 
     &::after {
       background-color: #ffc107;
@@ -87,4 +88,19 @@ export default defineComponent({
 h1 {
   text-align: center;
 }
+
+// @media screen and (min-width: 800px) {
+//   .timeline {
+//     &__content {
+//       &::after {
+//         background-color: #ffc107;
+//         content: "";
+//         position: absolute;
+//         left: calc(50% - 2px);
+//         width: 2px;
+//         height: 100%;
+//       }
+//     }
+//   }
+// }
 </style>
