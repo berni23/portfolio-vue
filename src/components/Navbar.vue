@@ -1,9 +1,11 @@
 <template>
   <div class="navbar">
-    <div class="main-item">BERNAT FERRER</div>
-    <div class="item">
-      <a href="/"> About</a>
-      <a class="contact" href="/"> Contant</a>
+    <div class="navbar__main-item navbar__section">
+      <span class="navbar__section__item">BERNAT FERRER</span>
+    </div>
+    <div class="navbar__item navbar__section">
+      <a class="navbar__section__item" href="/"> Projects</a>
+      <a class="contact navbar__section__item" href="/"> Contant</a>
     </div>
   </div>
 </template>
@@ -20,51 +22,40 @@ export default defineComponent({
 });
 </script>
 <style lang="scss">
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
+.navbar {
+  font-family: "Roboto", "sans-serif";
+  justify-content: space-between;
+  background-color: black;
+  transition: 1s linear all;
+  color: white;
+  min-height: 50px;
+  position: fixed;
+  padding: 10px;
+  display: flex;
+  z-index: 1000;
+  height: 25px;
+  width: 100%;
+  top: 0;
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-
-.navbar:hover{
-
-    background-color: #7dc8c6;
-    transition:  1s linear all; 
-}
-
-.navbar{
-
-    min-height:80px;
-
-    div{
-
-        margin-top:10px;
-       
+  &__main-item {
+    font-weight: 1000;
+    text-align: center;
+  }
+  &__section {
+    margin: 15px;
+    &__item {
+      text-decoration: inherit;
+      color: inherit;
+      cursor: pointer;
+      margin-right: 20px;
+      &:hover {
+        color: #7dc8c6;
+        transition: 0.3s linear all;
+      }
     }
-    background-color:black;
-    .main-item{
-        font-weight:1000;
-        text-align: center;
-    }
-
-    color: white;
-    transition:  1s linear all; 
-    font-family:'Roboto','sans-serif';
-    padding:10px;
-    display:flex;
-    justify-content: space-between;
-    width:100%;
-    position:fixed;
-    top:0;
-    height:50px;
-    z-index:1000;
-    .item{
-
-         cursor:pointer;
-        div{
-
-        margin-right:10px;
-        }
-        display:flex;
-    }
+  }
 }
 .contact {
   margin-right: 20px;
