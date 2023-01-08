@@ -1,13 +1,17 @@
 <template>
-  <div class="timeline-wrapper">
-    <div class="timeline" v-if="data.length" :class="fadeClass">
-      <div class="timeline__content">
-        <timeline-item
-          v-for="(item, i) in data"
-          :key="item.title"
-          :data="item"
-          :id="i"
-        />
+  <div>
+    <sectionTitle :section-title="'Timeline'" />
+    <h3 class="section-title">timeline</h3>
+    <div class="timeline-wrapper">
+      <div class="timeline" v-if="data.length" :class="fadeClass">
+        <div class="timeline__content">
+          <timeline-item
+            v-for="(item, i) in data"
+            :key="item.title"
+            :data="item"
+            :id="i"
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -18,11 +22,12 @@ import { defineComponent, ref, onMounted } from "vue-demi";
 import isMobile from "../../Logic/Utils/isMobile";
 import data from "../../data/cv";
 import TimelineItem from "./TimelineItem.vue";
+import Title from "../common/SectionTitle.vue";
 
 export default defineComponent({
   name: "Timeline",
 
-  components: { TimelineItem },
+  components: { TimelineItem, Title },
   setup(props, { emit }) {
     const fadeClass = ref("hide");
     onMounted(() => {

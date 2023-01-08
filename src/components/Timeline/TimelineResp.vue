@@ -1,4 +1,5 @@
 <template>
+  <sectionTitle :section-title="'Timeline'" />
   <div class="timeline-wrapper">
     <timeline-item-resp
       v-for="(item, i) in data"
@@ -13,11 +14,12 @@
 import { defineComponent, onMounted, ref } from "vue-demi";
 import data from "../../data/cv";
 import TimelineItemResp from "./TimelineItemResp.vue";
+import SectionTitle from "../common/SectionTitle.vue";
 
 export default defineComponent({
   name: "TimelineResp",
 
-  components: { TimelineItemResp },
+  components: { TimelineItemResp, SectionTitle },
   setup(props, { emit }) {
     const fadeClass = ref("hide");
     onMounted(() => {
