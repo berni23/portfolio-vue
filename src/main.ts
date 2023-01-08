@@ -3,7 +3,7 @@ import App from './App.vue'
 import router from './router'
 
 import {createPinia} from "pinia";
-// import {Notify, Quasar} from 'quasar'
+ import {Notify, Quasar} from 'quasar'
 
 import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
 
@@ -21,7 +21,8 @@ const pinia = createPinia();
 pinia.use(piniaPluginPersistedstate);
 
 createApp(App)
-    // .use(Quasar, {plugins: {Notify}}
+    .use(Quasar, {plugins: {Notify}}
+    )
     .use(router).use(pinia)
     .mount('#app')
 

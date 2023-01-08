@@ -1412,6 +1412,11 @@
   resolved "https://registry.yarnpkg.com/@quasar/extras/-/extras-1.15.9.tgz#78b6a0f3dce982dd6da160e86f7f5c681bd81e1e"
   integrity sha512-2y0KKTRol5FsqxhJH19pG5qU9ve+AUdPzQDSh/d7XxBZGJASOAcglKH/W1dCdChLJzyJDOJ4DmM2sxWQkosVWw==
 
+"@quasar/vite-plugin@^1.3.0":
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/@quasar/vite-plugin/-/vite-plugin-1.3.0.tgz#c399b00d40c4a40aadb0e90a8e9116d72379d339"
+  integrity sha512-wd7b/QrKu/WB53l+vxo6GLbkoEwh5FFKLtLl3fM8TXrDDRB1qsKKkRa/vwTU4dpuyBaOZDjycmYuAsOlTdNp8w==
+
 "@rollup/plugin-babel@^5.2.0":
   version "5.3.1"
   resolved "https://registry.yarnpkg.com/@rollup/plugin-babel/-/plugin-babel-5.3.1.tgz#04bc0608f4aa4b2e4b1aebf284344d0f68fda283"
@@ -4119,11 +4124,6 @@ ignore@^5.2.0:
   resolved "https://registry.yarnpkg.com/ignore/-/ignore-5.2.4.tgz#a291c0c6178ff1b960befe47fcdec301674a6324"
   integrity sha512-MAb38BcSbH0eHNBxn7ql2NH/kX33OkB3lZ1BNdh7ENeRChHTYsTvWrMubiIAMNS2llXEEgZ1MUOBtXChP3kaFQ==
 
-immutable@^4.0.0:
-  version "4.2.1"
-  resolved "https://registry.yarnpkg.com/immutable/-/immutable-4.2.1.tgz#8a4025691018c560a40c67e43d698f816edc44d4"
-  integrity sha512-7WYV7Q5BTs0nlQm7tl92rDYYoyELLKHoDMBKhrxEoiV4mrfVdRz8hzPiYOzH7yWjzoVEamxRuAqhxL2PLRwZYQ==
-
 import-fresh@^3.1.0, import-fresh@^3.2.1:
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/import-fresh/-/import-fresh-3.3.0.tgz#37162c25fcb9ebaa2e6e53d5b4d88ce17d9e0c2b"
@@ -5584,10 +5584,10 @@ qs@6.11.0:
   dependencies:
     side-channel "^1.0.4"
 
-quasar@^2.0.0:
-  version "2.11.3"
-  resolved "https://registry.yarnpkg.com/quasar/-/quasar-2.11.3.tgz#99cac489e931e3adf94c4350541d6a516322c4c3"
-  integrity sha512-a+PApE126fwtCsuPvbDLuSSgcFUy5bGu9WjqvVRP3z0xw+7pH93Hva2M+QQLMsYs4a5tpT4N/qXlsI591nxuxA==
+quasar@^2.11.4:
+  version "2.11.4"
+  resolved "https://registry.yarnpkg.com/quasar/-/quasar-2.11.4.tgz#2fbf978cbd381051cd32641f5d3e423565b0d6a3"
+  integrity sha512-psE6R5pAyzkjpp7symrtuFug9LRPcuKne6C2XUdIUbomEzi0BiWcdxGesIqS+SUn7qrLIEFWVsvnCTAYSmqbyw==
 
 queue-microtask@^1.2.2:
   version "1.2.3"
@@ -5867,14 +5867,12 @@ sass-loader@^13.1.0:
     klona "^2.0.4"
     neo-async "^2.6.2"
 
-sass@1.55.0:
-  version "1.55.0"
-  resolved "https://registry.yarnpkg.com/sass/-/sass-1.55.0.tgz#0c4d3c293cfe8f8a2e8d3b666e1cf1bff8065d1c"
-  integrity sha512-Pk+PMy7OGLs9WaxZGJMn7S96dvlyVBwwtToX895WmCpAOr5YiJYEUJfiJidMuKb613z2xNWcXCHEuOvjZbqC6A==
+sass@1.32.12:
+  version "1.32.12"
+  resolved "https://registry.yarnpkg.com/sass/-/sass-1.32.12.tgz#a2a47ad0f1c168222db5206444a30c12457abb9f"
+  integrity sha512-zmXn03k3hN0KaiVTjohgkg98C3UowhL1/VSGdj4/VAAiMKGQOE80PFPxFP2Kyq0OUskPKcY5lImkhBKEHlypJA==
   dependencies:
     chokidar ">=3.0.0 <4.0.0"
-    immutable "^4.0.0"
-    source-map-js ">=0.6.2 <2.0.0"
 
 schema-utils@2.7.0:
   version "2.7.0"
@@ -6086,7 +6084,7 @@ source-list-map@^2.0.0:
   resolved "https://registry.yarnpkg.com/source-list-map/-/source-list-map-2.0.1.tgz#3993bd873bfc48479cca9ea3a547835c7c154b34"
   integrity sha512-qnQ7gVMxGNxsiL4lEuJwe/To8UnK7fAnmbGEEH8RpLouuKbeEm0lhbQVFIrNSuB+G7tVrAlVsZgETT5nljf+Iw==
 
-"source-map-js@>=0.6.2 <2.0.0", source-map-js@^1.0.2:
+source-map-js@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/source-map-js/-/source-map-js-1.0.2.tgz#adbc361d9c62df380125e7f161f71c826f1e490c"
   integrity sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw==

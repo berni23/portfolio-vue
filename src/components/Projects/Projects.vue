@@ -22,12 +22,7 @@ export default defineComponent({
 
   components: { SectionTitle, ProjectItem },
 
-  setup(props, { emit }) {
-    // const token = import.meta.env.MY_GITHUB_TOKEN;
-
-    const token = process.env.VUE_APP_GITHUB_TOKEN;
-    console.log("token", token);
-  },
+  setup(props, { emit }) {},
 });
 </script>
 <style lang="scss">
@@ -41,6 +36,7 @@ export default defineComponent({
   margin: 0 auto;
 
   &__list {
+    width: 33%;
     &__item {
       padding: 0 8px;
     }

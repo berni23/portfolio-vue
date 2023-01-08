@@ -45,7 +45,7 @@ import categories from "./Categories.vue";
 export default defineComponent({
   name: "TimelineItem",
   props: ["data", "id"],
-  components: { categories, taglist },
+  components: { categories },
 
   setup(props, { emit }) {
     const bottom = computed(() => {
