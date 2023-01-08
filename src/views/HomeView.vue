@@ -1,10 +1,14 @@
 <template>
   <background />
-  <navbar />
+  <navbar id="landing" />
   <icons />
 
-  <timeline-resp v-if="isMobile" />
-  <timeline v-else />
+  <div>
+    <timeline-resp v-if="isMobile" id="timeline" />
+    <timeline v-else id="timeline" />
+  </div>
+
+  <div id="projects"></div>
 </template>
 
 <script lang="ts">

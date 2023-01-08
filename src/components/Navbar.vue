@@ -1,24 +1,38 @@
 <template>
   <div class="navbar">
     <div class="navbar__main-item navbar__section">
-      <span class="navbar__section__item">BERNAT FERRER</span>
+      <a class="navbar__section__item" href="#" v-scroll-to>BERNAT FERRER</a>
     </div>
     <div class="navbar__item navbar__section">
-      <a class="navbar__section__item" href="/"> Projects</a>
-      <a class="contact navbar__section__item" href="/"> Contant</a>
+      <span
+        @click="goToTimeline"
+        class="navbar__section__item"
+        href="/#timeline"
+      >
+        Timeline
+      </span>
+      <a class="contact navbar__section__item" href="/"> Projects</a>
+      <a class="contact navbar__section__item" href="/"> Contact</a>
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue-demi";
+import { useRouter } from "vue-router";
 import Background from "../components/Background.vue";
 
 export default defineComponent({
   name: "HomeView",
   components: { Background },
 
-  setup(props, { emit }) {},
+  setup(props, { emit }) {
+    const router = useRouter();
+
+    const goToTimeline = () => router.push("/#timeline");
+
+    return { goToTimeline };
+  },
 });
 </script>
 <style lang="scss">
