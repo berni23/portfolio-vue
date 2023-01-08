@@ -1,17 +1,14 @@
 <template>
-  <div>
-    <sectionTitle :section-title="'Timeline'" />
-    <h3 class="section-title">timeline</h3>
-    <div class="timeline-wrapper">
-      <div class="timeline" v-if="data.length" :class="fadeClass">
-        <div class="timeline__content">
-          <timeline-item
-            v-for="(item, i) in data"
-            :key="item.title"
-            :data="item"
-            :id="i"
-          />
-        </div>
+  <sectionTitle :section-title="'Timeline'" />
+  <div class="timeline-wrapper">
+    <div class="timeline" v-if="data.length" :class="fadeClass">
+      <div class="timeline__content">
+        <timeline-item
+          v-for="(item, i) in data"
+          :key="item.title"
+          :data="item"
+          :id="i"
+        />
       </div>
     </div>
   </div>
@@ -20,14 +17,14 @@
 <script lang="ts">
 import { defineComponent, ref, onMounted } from "vue-demi";
 import isMobile from "../../Logic/Utils/isMobile";
-import data from "../../data/cv";
+import data from "../../data/timeline";
 import TimelineItem from "./TimelineItem.vue";
-import Title from "../common/SectionTitle.vue";
+import SectionTitle from "../common/SectionTitle.vue";
 
 export default defineComponent({
   name: "Timeline",
 
-  components: { TimelineItem, Title },
+  components: { TimelineItem, SectionTitle },
   setup(props, { emit }) {
     const fadeClass = ref("hide");
     onMounted(() => {
@@ -56,6 +53,7 @@ export default defineComponent({
   display: flex;
   flex-direction: column;
   min-width: 100%;
+  height: auto;
   position: relative;
   &__content {
     display: flex;
@@ -69,7 +67,7 @@ export default defineComponent({
       position: absolute;
       left: calc(50% - 2px);
       width: 2px;
-      height: 100%;
+      height: 80%;
     }
   }
 }

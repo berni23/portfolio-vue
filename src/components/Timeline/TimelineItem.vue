@@ -29,12 +29,7 @@
           />
         </a>
 
-        <ul class="timeline-item__content__content__taglist">
-          <li class="hashtag" v-for="tag in data.tags" :key="tag">
-            #{{ tag }}
-          </li>
-        </ul>
-
+        <taglist :taglist="data.tags" />
         <span class="circle"></span>
       </div>
     </div>
@@ -45,11 +40,12 @@
 import { computed, defineComponent, ref } from "vue-demi";
 import isMobile from "../../Logic/Utils/isMobile";
 
+import taglist from "../common/Taglist.vue";
 import categories from "./Categories.vue";
 export default defineComponent({
   name: "TimelineItem",
   props: ["data", "id"],
-  components: { categories },
+  components: { categories, taglist },
 
   setup(props, { emit }) {
     const bottom = computed(() => {
@@ -177,32 +173,6 @@ export default defineComponent({
         text-align: justify;
         color: #777;
         font-size: 1rem;
-      }
-
-      &__taglist {
-        &:nth-child(odd) {
-          margin-top: 20px;
-          display: flex;
-          flex-wrap: wrap;
-          width: 100%;
-
-          * {
-            float: left;
-          }
-        }
-
-        .hashtag {
-          padding: 2px 4px;
-          list-style-type: none;
-          display: inline;
-          border-radius: 3px;
-          border: 1px solid #efeae1;
-          background-color: #f8f6f2;
-          color: #9e9b95 !important;
-          margin-right: 10px !important;
-          margin-top: 10px;
-          overflow: hidden;
-        }
       }
     }
   }

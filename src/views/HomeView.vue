@@ -1,18 +1,18 @@
 <template>
   <background />
-  <navbar id="landing" />
+  <navbar />
   <icons />
 
   <div>
-    <timeline-resp v-if="isMobile" id="timeline" />
-    <timeline v-else id="timeline" />
+    <timeline-resp v-if="isMobile" />
+    <timeline v-else />
   </div>
 
-  <div id="projects"></div>
+  <projects />
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue-demi";
+import { defineComponent, onMounted } from "vue";
 import Background from "../components/Background.vue";
 import isMobile from "../Logic/Utils/isMobile";
 
@@ -20,13 +20,19 @@ import Navbar from "../components/Navbar.vue";
 
 import Icons from "../components/Icons.vue";
 import Timeline from "../components/Timeline/Timeline.vue";
+import Projects from "../components/Projects/Projects.vue";
 import TimelineResp from "../components/Timeline/TimelineResp.vue";
+import loadFavIcon from "../Logic/Utils/loadFavIcon";
 
 export default defineComponent({
   name: "HomeView",
-  components: { Background, Navbar, Timeline, Icons, TimelineResp },
+  components: { Background, Navbar, Timeline, Icons, TimelineResp, Projects },
 
   setup(props, { emit }) {
+    document.title = "Bernat Ferrer";
+
+    onMounted(loadFavIcon);
+
     return { isMobile };
   },
 });

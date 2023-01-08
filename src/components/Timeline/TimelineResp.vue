@@ -12,7 +12,7 @@
 
 <script lang="ts">
 import { defineComponent, onMounted, ref } from "vue-demi";
-import data from "../../data/cv";
+import data from "../../data/timeline";
 import TimelineItemResp from "./TimelineItemResp.vue";
 import SectionTitle from "../common/SectionTitle.vue";
 

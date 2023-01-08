@@ -8,13 +8,13 @@ import {createPinia} from "pinia";
 import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
 
 // // Import icon libraries
-// import '@quasar/extras/material-icons/material-icons.css'
-// import '@quasar/extras/material-symbols-outlined/material-symbols-outlined.css'
-// import '@quasar/extras/material-symbols-rounded/material-symbols-rounded.css'
-// import '@quasar/extras/bootstrap-icons/bootstrap-icons.css'
+import '@quasar/extras/material-icons/material-icons.css'
+import '@quasar/extras/material-symbols-outlined/material-symbols-outlined.css'
+import '@quasar/extras/material-symbols-rounded/material-symbols-rounded.css'
+import '@quasar/extras/bootstrap-icons/bootstrap-icons.css'
 
 // // // Import Quasar css
-// import 'quasar/src/css/index.sass'
+import 'quasar/src/css/index.sass'
 
 
 const pinia = createPinia();

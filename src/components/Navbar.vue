@@ -1,18 +1,18 @@
 <template>
   <div class="navbar">
     <div class="navbar__main-item navbar__section">
-      <a class="navbar__section__item" href="#" v-scroll-to>BERNAT FERRER</a>
+      <span class="navbar__section__item" @click="goToLanding" v-scroll-to
+        >BERNAT FERRER</span
+      >
     </div>
     <div class="navbar__item navbar__section">
-      <span
-        @click="goToTimeline"
-        class="navbar__section__item"
-        href="/#timeline"
+      <span @click="goToTimeline" class="navbar__section__item"> Timeline</span>
+      <span @click="goToProjects" class="contact navbar__section__item"
+        >Projects</span
       >
-        Timeline
-      </span>
-      <a class="contact navbar__section__item" href="/"> Projects</a>
-      <a class="contact navbar__section__item" href="/"> Contact</a>
+      <span @click="goToContact" class="contact navbar__section__item"
+        >Contact</span
+      >
     </div>
   </div>
 </template>
@@ -30,8 +30,11 @@ export default defineComponent({
     const router = useRouter();
 
     const goToTimeline = () => router.push("/#timeline");
+    const goToProjects = () => router.push("/#projects");
+    const goToContact = () => router.push("/#contact");
+    const goToLanding = () => router.push("/#landing");
 
-    return { goToTimeline };
+    return { goToTimeline, goToProjects, goToContact, goToLanding };
   },
 });
 </script>
