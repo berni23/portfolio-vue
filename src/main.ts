@@ -14,8 +14,6 @@ import '@quasar/extras/material-symbols-rounded/material-symbols-rounded.css'
 import '@quasar/extras/bootstrap-icons/bootstrap-icons.css'
 
 // // // Import Quasar css
-// import 'quasar/src/css/index.sass'
-
 
 const pinia = createPinia();
 pinia.use(piniaPluginPersistedstate);

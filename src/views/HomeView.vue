@@ -12,6 +12,8 @@
   <div class="projects-home">
     <projects />
   </div>
+
+  <contact-form />
 </template>
 
 <script lang="ts">
@@ -27,9 +29,18 @@ import Projects from "../components/Projects/Projects.vue";
 import TimelineResp from "../components/Timeline/TimelineResp.vue";
 import loadFavIcon from "../Logic/Utils/loadFavIcon";
 
+import contactForm from "../components/Contact/ContactForm.vue";
 export default defineComponent({
   name: "HomeView",
-  components: { Background, Navbar, Timeline, Icons, TimelineResp, Projects },
+  components: {
+    Background,
+    Navbar,
+    Timeline,
+    Icons,
+    TimelineResp,
+    Projects,
+    contactForm,
+  },
 
   setup(props, { emit }) {
     document.title = "Bernat Ferrer";
