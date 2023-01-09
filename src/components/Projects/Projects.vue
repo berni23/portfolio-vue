@@ -40,6 +40,7 @@ export default defineComponent({
 </script>
 <style lang="scss">
 .projects {
+  position: relative;
   width: 80%;
   height: auto;
   display: flex;

@@ -43,7 +43,7 @@ export default defineComponent({
     }
 
     &__icon {
-      width: 25px;
+      // width: 25px;
 
       margin: auto 5px;
 

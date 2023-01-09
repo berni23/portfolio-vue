@@ -126,7 +126,6 @@ export default defineComponent({
 </script>
 <style lang="scss">
 .custom-icon {
-  width: 25px;
 
   margin: auto 5px;
 

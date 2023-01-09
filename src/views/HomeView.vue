@@ -1,14 +1,16 @@
 <template>
   <background />
-  <!-- <navbar />
+  <navbar />
   <icons />
 
   <div>
     <timeline-resp v-if="isMobile" />
     <timeline v-else />
-  </div> -->
+  </div>
 
-  <projects />
+  <div class="projects-home">
+    <projects />
+  </div>
 </template>
 
 <script lang="ts">
@@ -50,5 +52,10 @@ body {
 * {
   margin: 0;
   padding: 0;
+}
+
+.projects-home {
+  position: relative;
+  bottom: 250px;
 }
 </style>

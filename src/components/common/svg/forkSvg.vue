@@ -30,7 +30,7 @@ export default defineComponent({
 
   color: #d0d7de;
 
-  width: 25px;
+  // width: 25px;
   height: auto;
 }
 </style>

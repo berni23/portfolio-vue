@@ -28,8 +28,6 @@ export default defineComponent({
   // color: white;
 
   color: #d0d7de;
-
-  width: 25px;
   height: auto;
 }
 </style>
