@@ -1,4 +1,5 @@
 <template>
+  <span></span>
   <background />
   <navbar />
   <icons />

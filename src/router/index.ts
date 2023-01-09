@@ -17,7 +17,14 @@ const routes: Array<RouteRecordRaw> = [
 const
     router = createRouter({
         scrollBehavior(to,from,savedPosition){
+
             if(to.hash){
+                if(to.hash=='#landing'){
+                    return{top:0,
+
+                        behavior:'smooth'
+                    }
+                }
                 return {
                 el: to.hash,
                 behavior:'smooth'

@@ -106,14 +106,13 @@ export default defineComponent({
     },
   },
   setup(props, { emit }) {
-    console.log("project repo item", props.repoItem);
     return { repoItem: props.repoItem };
   },
 });
 </script>
 <style lang="scss">
 .custom-icon {
-  // width: 25px;
+  width: 25px;
   color: #777;
 }
 .project-item {

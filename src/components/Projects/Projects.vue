@@ -79,6 +79,10 @@ export default defineComponent({
         padding: 0px;
       }
     }
+
+    .custom-icon {
+      width: auto;
+    }
   }
 }
 </style>

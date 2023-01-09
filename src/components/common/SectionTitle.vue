@@ -13,7 +13,6 @@ export default defineComponent({
 
   props: ["sectionTitle"],
   setup(props, { emit }) {
-    console.log(props.sectionTitle);
     return { title: props.sectionTitle, id: props.sectionTitle.toLowerCase() };
   },
 });

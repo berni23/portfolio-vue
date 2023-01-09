@@ -12,7 +12,6 @@ export default defineComponent({
   props: ["tags"],
 
   setup(props, { emit }) {
-    console.log("tags", props.tags);
     return { taglist: props.tags };
   },
 });

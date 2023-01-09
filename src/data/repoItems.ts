@@ -18,14 +18,22 @@ export default  [
     link:{
         name: "appstore link",
         link: "https://play.google.com/store/apps/details?id=com.berni.android.prototype1lanbase"
-    }
+    },
+
+    urlImage:"https://play-lh.googleusercontent.com/E_txWdC0wg2ZijMNQLzwJ_DjSpEZlJxxjcd_V-Oo3m439881-KETElv7PKpIHXiI76Be=w240-h480-rw"
 },
 
-// {
-//     name:"wine-stock-back",
+{
+    name:"moving-blocks"
    
-// },{
-//     name:"wine-stock-front",
+},
+{
+    name:"portfolio-vue",
+        link:{
+            name: "bernatferrer.com",
+            link: "https://www.bernatferrer.com"
+        },
+        urlImage:"https://avatars.githubusercontent.com/u/25109342?v=4"
+    },
    
-// }
 ]

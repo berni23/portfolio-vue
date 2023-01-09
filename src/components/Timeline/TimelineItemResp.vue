@@ -27,12 +27,6 @@
         </a>
 
         <taglist :tags="data.tags" />
-
-        <!-- <ul class="card-item__content__content__taglist">
-          <li class="hashtag" v-for="tag in data.tags" :key="tag">
-            #{{ tag }}
-          </li>
-        </ul> -->
       </div>
     </div>
   </div>
