@@ -1,5 +1,5 @@
 <template>
-  <div class="project-item project-repo row p-3">
+  <div class="project-item project-repo row">
     <div class="project-item__content project-repo__content">
       <div class="project-item__content__header project-repo__content__header">
         <div class="project-repo__content__header__section">
@@ -64,7 +64,7 @@
       </div>
 
       <div class="project-repo__content__footer">
-        <taglist :taglist="repoItem.tags" />
+        <taglist :tags="repoItem.tags" />
         <div
           v-if="repoItem.license"
           class="project-repo__content__footer__license"
@@ -139,13 +139,15 @@ export default defineComponent({
   border-style: solid;
   border-width: 1px;
   padding: 10px;
-  width: 100%;
+  min-height: 200px !important;
 
   &__content {
     display: flex;
 
     width: 100%;
     flex-direction: column;
+    justify-content: space-between;
+    min-height: 200px !important;
 
     &__header {
       display: flex;
@@ -192,6 +194,7 @@ export default defineComponent({
       &__description {
         text-align: left;
         margin-left: 10px !important;
+        line-height: 1.5rem;
       }
 
       &__link {
@@ -199,8 +202,6 @@ export default defineComponent({
           color: inherit;
           cursor: pointer;
           font-weight: bold;
-
-          // color: #777;
         }
       }
     }
@@ -208,8 +209,6 @@ export default defineComponent({
     &__footer {
       display: flex;
       justify-content: space-between;
-      // text-align: left;
-
       margin-top: 20px;
 
       .taglist:nth-child(odd) {
@@ -219,11 +218,8 @@ export default defineComponent({
 
       &__license {
         display: flex;
-
         margin-top: 5px;
-
         text-align: center;
-
         transform: scale(0.8);
 
         a {

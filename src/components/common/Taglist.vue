@@ -9,10 +9,11 @@ import { defineComponent } from "vue-demi";
 
 export default defineComponent({
   name: "Taglist",
-  props: ["taglist"],
+  props: ["tags"],
 
   setup(props, { emit }) {
-    return { taglist: props.taglist };
+    console.log("tags", props.tags);
+    return { taglist: props.tags };
   },
 });
 </script>

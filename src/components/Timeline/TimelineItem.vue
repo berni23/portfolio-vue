@@ -29,7 +29,7 @@
           />
         </a>
 
-        <taglist :taglist="data.tags" />
+        <taglist :tags="data.tags" />
         <span class="circle"></span>
       </div>
     </div>
@@ -45,7 +45,7 @@ import categories from "./Categories.vue";
 export default defineComponent({
   name: "TimelineItem",
   props: ["data", "id"],
-  components: { categories },
+  components: { categories, taglist },
 
   setup(props, { emit }) {
     const bottom = computed(() => {

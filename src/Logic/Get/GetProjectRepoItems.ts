@@ -25,10 +25,7 @@ export default  function getProjectRepoItems(data:Array<any>)  {
   return projectsStore.repoItems;
 }
 
-
 function buildProjectRepoFromDataAndResponse(data:any ,responseData:any):RepoItem {
-
-
     responseData = responseData.data;
     const item = {} as RepoItem
     item.name= data.name,

@@ -49,8 +49,15 @@ export default defineComponent({
   margin: 0 auto;
 
   &__list {
-    width: 33%;
+    // width: 33%;
+
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
     &__item {
+      width: 100% !important;
+      margin: 0 10px;
+      height: auto;
       padding: 0 8px;
     }
   }

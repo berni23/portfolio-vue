@@ -57,7 +57,7 @@
       </div>
 
       <div class="project-repo__content__footer">
-        <taglist :taglist="topics" />
+        <taglist :tags="topics" />
         <div v-if="license" class="project-repo__content__footer__license">
           <license-svg class="custom-icon" />
           <a :href="license.url">{{ license.name }}</a>

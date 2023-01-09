@@ -18,7 +18,7 @@
 import { defineComponent } from "vue-demi";
 
 export default defineComponent({
-  name: "Taglist",
+  name: "visibility",
   props: ["visible"],
 
   setup(props, { emit }) {
