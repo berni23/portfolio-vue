@@ -6,9 +6,9 @@
           <repo-svg />
           <a
             class="mr-1 text-bold wb-break-word project-repo__content__header__title"
-            :href="urlRepo"
+            :href="repoItem.urlRepo"
           >
-            <span class="repo" title="berni-dark">berni-dark</span></a
+            <span class="repo">{{ repoItem.name }}</span></a
           >
         </div>
 
@@ -21,7 +21,7 @@
           ></q-icon>
 
           <span class="project-repo__content__header__stargazers__count">{{
-            stargazersCount
+            repoItem.stargazersCount
           }}</span>
         </div>
 
@@ -33,34 +33,44 @@
           />
 
           <span class="project-repo__content__header__stargazers__count">{{
-            forksCount
+            repoItem.forksCount
           }}</span>
         </div>
 
         <visibility
           class="project-repo__content__header__section"
-          :visible="visible"
+          :visible="repoItem.visible"
         />
       </div>
 
       <div class="project-repo__content__content">
-        <img :src="urlImage" class="project-repo__content__content__img" />
+        <img
+          v-if="repoItem.urlImage"
+          :src="repoItem.urlImage"
+          class="project-repo__content__content__img"
+        />
         <p class="project-repo__content__content__description">
-          {{ description }}
+          {{ repoItem.description }}
 
-          <span v-if="link" class="project-repo__content__content__link">
-            <a :href="link.link">
-              {{ link.name }}
+          <span
+            v-if="repoItem.link"
+            class="project-repo__content__content__link"
+          >
+            <a :href="repoItem.link.link">
+              {{ repoItem.link.name }}
             </a></span
           >
         </p>
       </div>
 
       <div class="project-repo__content__footer">
-        <taglist :taglist="topics" />
-        <div v-if="license" class="project-repo__content__footer__license">
+        <taglist :taglist="repoItem.tags" />
+        <div
+          v-if="repoItem.license"
+          class="project-repo__content__footer__license"
+        >
           <license-svg class="custom-icon" />
-          <a :href="license.url">{{ license.name }}</a>
+          <a :href="repoItem.license.url">{{ repoItem.license.name }}</a>
         </div>
       </div>
     </div>
@@ -68,8 +78,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
-import { getDataFromRepo } from "../../Logic/Repositories/GithubRepository";
+import { defineComponent, PropType } from "vue";
 import repoSvg from "../common/svg/repoSvg.vue";
 import licenseSvg from "../common/svg/licenseSvg.vue";
 import SectionTitle from "../common/SectionTitle.vue";
@@ -77,9 +86,10 @@ import SectionTitle from "../common/SectionTitle.vue";
 import Taglist from "../common/Taglist.vue";
 import visibility from "../common/Visibility.vue";
 import ForkSvg from "../common/svg/forkSvg.vue";
+import RepoItem from "../../CustomTypes/RepoItem";
 
 export default defineComponent({
-  name: "ProjectItem",
+  name: "ProjectRepoItem",
   components: {
     SectionTitle,
     repoSvg,
@@ -88,39 +98,16 @@ export default defineComponent({
     Taglist,
     licenseSvg,
   },
-  async setup(props, { emit }) {
-    const response = await getDataFromRepo("berni-dark");
-    const data = response["data"];
-    console.log("data", data);
-    const urlImage =
-      "https://repository-images.githubusercontent.com/584409170/ddd55509-932e-43e6-8071-026477f11d26";
 
-    const urlRepo = data.html_url;
-    const description = data.description;
-    const topics = data.topics;
-    const stargazersCount = data.stargazers_count;
-    const watchers = data.watchers;
-    const forksCount = data.forks_count;
-    const license = data.license;
-    const link = {
-      name: "vscode extension",
-      link: "https://marketplace.visualstudio.com/items?itemName=BernatFerrer.berni-dark",
-    };
-
-    return {
-      link,
-      repoSvg,
-      licenseSvg,
-      urlRepo,
-      urlImage,
-      description,
-      topics,
-      visible: data.visibility == "public" ? true : false,
-      watchers,
-      license,
-      stargazersCount,
-      forksCount,
-    };
+  props: {
+    repoItem: {
+      type: Object as PropType<RepoItem>,
+      required: true,
+    },
+  },
+  setup(props, { emit }) {
+    console.log("project repo item", props.repoItem);
+    return { repoItem: props.repoItem };
   },
 });
 </script>

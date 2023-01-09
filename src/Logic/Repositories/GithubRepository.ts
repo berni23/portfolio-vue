@@ -1,7 +1,5 @@
 
 
-
-
 const owner = "berni23"
 
 function  createOctokit(){
@@ -13,10 +11,12 @@ function  createOctokit(){
 }
 
 export async function getDataFromRepo(repo:string): Promise<Response>{
-    
+
         return  await createOctokit().request("GET /repos/" +owner+"/"+ repo,{
         owner,
         repo,
         });
 
 }
+
+

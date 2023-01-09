@@ -2,27 +2,44 @@
   <sectionTitle :section-title="'Projects'" />
   <div class="projects">
     <ul class="projects__list">
-      <li class="projects__list__item">
-        <suspense>
-          <project-item />
-        </suspense>
+      <li
+        class="projects__list__item"
+        v-for="repoItem in repoItems"
+        :key="repoItem.id"
+      >
+        <project-repo-item :repo-item="repoItem" />
       </li>
     </ul>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted } from "vue";
-
+import { defineComponent, onMounted, ref } from "vue";
+import RepoItem from "../../CustomTypes/RepoItem";
+import repoData from "../../data/repoItems";
+import getProjectRepoItems from "../../Logic/Get/GetProjectRepoItems";
 import SectionTitle from "../common/SectionTitle.vue";
-
-import ProjectItem from "./ProjectItem.vue";
+import ProjectRepoItem from "./ProjectRepoItem.vue";
 export default defineComponent({
   name: "Projects",
 
-  components: { SectionTitle, ProjectItem },
+  components: { SectionTitle, ProjectRepoItem },
 
-  setup(props, { emit }) {},
+  setup(props, { emit }) {
+    const repoItems = ref([] as Array<RepoItem>);
+
+    onMounted(async () => {
+      const data = (await getProjectRepoItems(repoData)).map(
+        (result) => result.value
+      ) as Array<RepoItem>;
+      repoItems.value = data;
+      console.log("on mounted", data);
+    });
+    //TODO  -> cache results for a day .
+
+    console.log("mounting Projects");
+    return { repoItems };
+  },
 });
 </script>
 <style lang="scss">
