@@ -33,11 +33,7 @@ export default defineComponent({
         (result) => result.value
       ) as Array<RepoItem>;
       repoItems.value = data;
-      console.log("on mounted", data);
     });
-    //TODO  -> cache results for a day .
-
-    console.log("mounting Projects");
     return { repoItems };
   },
 });

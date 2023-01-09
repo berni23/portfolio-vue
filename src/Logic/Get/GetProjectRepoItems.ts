@@ -1,5 +1,6 @@
 
 import RepoItem from "../../CustomTypes/RepoItem";
+import { useProjectsStore } from "../../stores/projects";
 import { getDataFromRepo } from "../Repositories/GithubRepository";
 
 
@@ -13,7 +14,15 @@ import { getDataFromRepo } from "../Repositories/GithubRepository";
 
 }
 export default  function getProjectRepoItems(data:Array<any>)  {
-       return fetchProjectRepoItems(data)
+
+      const projectsStore = useProjectsStore()
+      if(projectsStore.shouldFetchRepoItems){
+       return fetchProjectRepoItems(data).then((resData)=>{       
+        projectsStore.updateRepoItems(resData)
+        return resData
+      })
+ }
+  return projectsStore.repoItems;
 }
 
 
