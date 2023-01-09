@@ -1,12 +1,12 @@
 <template>
   <background />
-  <navbar />
+  <!-- <navbar />
   <icons />
 
   <div>
     <timeline-resp v-if="isMobile" />
     <timeline v-else />
-  </div>
+  </div> -->
 
   <projects />
 </template>

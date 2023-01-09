@@ -114,9 +114,7 @@ export default defineComponent({
 <style lang="scss">
 .custom-icon {
   width: 25px;
-
   margin: auto 5px;
-
   color: #777;
 }
 .project-item {
@@ -233,4 +231,5 @@ export default defineComponent({
     }
   }
 }
+
 </style>

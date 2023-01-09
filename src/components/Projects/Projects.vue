@@ -49,8 +49,6 @@ export default defineComponent({
   margin: 0 auto;
 
   &__list {
-    // width: 33%;
-
     list-style-type: none;
     display: flex;
     flex-direction: row;
@@ -59,6 +57,23 @@ export default defineComponent({
       margin: 0 10px;
       height: auto;
       padding: 0 8px;
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .projects {
+    width: 100%;
+    &__list {
+      display: flex;
+      flex-direction: column;
+
+      padding: 0 50px;
+      &__item {
+        width: auto !important;
+        margin: 10px;
+        padding: 0px;
+      }
     }
   }
 }
