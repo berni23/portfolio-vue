@@ -30,7 +30,6 @@
         >
           <fork-svg
             class="custom-icon project-repo__content__header__starred"
-           
           />
 
           <span class="project-repo__content__header__stargazers__count">{{
@@ -46,36 +45,52 @@
 
       <div class="project-repo__content__content">
         <img :src="urlImage" class="project-repo__content__content__img" />
+        <p class="project-repo__content__content__description">
+          {{ description }}
+
+          <span v-if="link" class="project-repo__content__content__link">
+            <a :href="link.link">
+              {{ link.name }}
+            </a></span
+          >
+        </p>
+      </div>
+
+      <div class="project-repo__content__footer">
+        <taglist :taglist="topics" />
+        <div v-if="license" class="project-repo__content__footer__license">
+          <license-svg class="custom-icon" />
+          <a :href="license.url">{{ license.name }}</a>
+        </div>
       </div>
     </div>
   </div>
-
-  <!-- <a
-    href="https://marketplace.visualstudio.com/items?itemName=BernatFerrer.berni-dark"
-  >
-    Project item</a
-  > -->
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
 import { getDataFromRepo } from "../../Logic/Repositories/GithubRepository";
 import repoSvg from "../common/svg/repoSvg.vue";
+import licenseSvg from "../common/svg/licenseSvg.vue";
 import SectionTitle from "../common/SectionTitle.vue";
 
+import Taglist from "../common/Taglist.vue";
 import visibility from "../common/Visibility.vue";
 import ForkSvg from "../common/svg/forkSvg.vue";
 
 export default defineComponent({
   name: "ProjectItem",
-
-  components: { SectionTitle, repoSvg, visibility, ForkSvg },
-
+  components: {
+    SectionTitle,
+    repoSvg,
+    visibility,
+    ForkSvg,
+    Taglist,
+    licenseSvg,
+  },
   async setup(props, { emit }) {
     const response = await getDataFromRepo("berni-dark");
-
     const data = response["data"];
-
     console.log("data", data);
     const urlImage =
       "https://repository-images.githubusercontent.com/584409170/ddd55509-932e-43e6-8071-026477f11d26";
@@ -87,9 +102,15 @@ export default defineComponent({
     const watchers = data.watchers;
     const forksCount = data.forks_count;
     const license = data.license;
+    const link = {
+      name: "vscode extension",
+      link: "https://marketplace.visualstudio.com/items?itemName=BernatFerrer.berni-dark",
+    };
 
     return {
+      link,
       repoSvg,
+      licenseSvg,
       urlRepo,
       urlImage,
       description,
@@ -135,6 +156,7 @@ export default defineComponent({
 
   &__content {
     display: flex;
+
     width: 100%;
     flex-direction: column;
 
@@ -171,13 +193,59 @@ export default defineComponent({
     }
 
     &__content {
-      margin-top: 5px;
-      padding-bottom: 5px;
+      margin-top: 10px;
       &__img {
         width: 100px;
         height: auto;
         float: left;
+        margin-right: 10px;
         border-radius: 10px;
+      }
+
+      &__description {
+        text-align: left;
+        margin-left: 10px !important;
+      }
+
+      &__link {
+        a {
+          color: inherit;
+          cursor: pointer;
+          font-weight: bold;
+
+          // color: #777;
+        }
+      }
+    }
+
+    &__footer {
+      display: flex;
+      justify-content: space-between;
+      // text-align: left;
+
+      margin-top: 20px;
+
+      .taglist:nth-child(odd) {
+        width: auto !important;
+        margin-top: 0px;
+      }
+
+      &__license {
+        display: flex;
+
+        margin-top: 5px;
+
+        text-align: center;
+
+        transform: scale(0.8);
+
+        a {
+          color: inherit;
+          margin-top: 5px;
+
+          text-decoration: inherit;
+          font-weight: bold;
+        }
       }
     }
   }
