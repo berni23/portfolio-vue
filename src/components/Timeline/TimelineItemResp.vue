@@ -26,11 +26,13 @@
           />
         </a>
 
-        <ul class="card-item__content__content__taglist">
+        <taglist :tags="data.tags" />
+
+        <!-- <ul class="card-item__content__content__taglist">
           <li class="hashtag" v-for="tag in data.tags" :key="tag">
             #{{ tag }}
           </li>
-        </ul>
+        </ul> -->
       </div>
     </div>
   </div>
@@ -40,11 +42,12 @@
 import { computed, defineComponent, ref } from "vue-demi";
 import isMobile from "../../Logic/Utils/isMobile";
 
+import Taglist from "../common/Taglist.vue";
 import categories from "./Categories.vue";
 export default defineComponent({
   name: "TimelineItem",
   props: ["data", "id"],
-  components: { categories },
+  components: { categories, Taglist },
 
   setup(props, { emit }) {
     const bottom = computed(() => {

@@ -31,6 +31,7 @@ export default defineComponent({
   color: #777;
 
   border: 1px solid #d0d7de;
+  margin-left: 10px;
 
   border-radius: 10px;
 

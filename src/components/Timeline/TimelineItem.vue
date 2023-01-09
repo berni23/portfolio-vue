@@ -40,12 +40,12 @@
 import { computed, defineComponent, ref } from "vue-demi";
 import isMobile from "../../Logic/Utils/isMobile";
 
-import taglist from "../common/Taglist.vue";
+import Taglist from "../common/Taglist.vue";
 import categories from "./Categories.vue";
 export default defineComponent({
   name: "TimelineItem",
   props: ["data", "id"],
-  components: { categories, taglist },
+  components: { categories, Taglist },
 
   setup(props, { emit }) {
     const bottom = computed(() => {

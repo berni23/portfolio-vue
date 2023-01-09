@@ -58,4 +58,11 @@ body {
   position: relative;
   bottom: 250px;
 }
+
+@media screen and (max-width: 800px) {
+  .projects-home {
+    position: relative;
+    bottom: 0;
+  }
+}
 </style>

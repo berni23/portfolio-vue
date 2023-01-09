@@ -113,8 +113,7 @@ export default defineComponent({
 </script>
 <style lang="scss">
 .custom-icon {
-  width: 25px;
-  margin: auto 5px;
+  // width: 25px;
   color: #777;
 }
 .project-item {
@@ -171,7 +170,7 @@ export default defineComponent({
         color: inherit;
         cursor: pointer;
 
-        font-size: 1.5rem;
+        font-size: 1.2rem;
         margin-left: 10px;
         // color: #777;
         color: #0969da;
@@ -231,5 +230,4 @@ export default defineComponent({
     }
   }
 }
-
 </style>
