@@ -1,11 +1,15 @@
 ]
 <template>
   <div class="contact-form">
+    <p class="contact-form__desc">
+      If you want to collaborate for a project please don't hesitate to contact
+      me using the following form
+    </p>
     <q-form
       :action="formEndpoint"
       @submit.once="handleSubmit"
       method="POST"
-      class="q-gutter-md"
+      class="q-gutter-md contact-form__form"
     >
       <q-input
         filled
@@ -23,7 +27,6 @@
             'please give a valid email',
         ]"
       />
-
       <q-input
         filled
         v-model="name"
@@ -52,7 +55,7 @@
       <q-toggle
         v-model="accept"
         class="contact-form__form__toggle"
-        label="I  hereby accept that like to toggle buttons"
+        label="I  hereby accept that I like to toggle buttons"
       />
 
       <div>
@@ -75,15 +78,14 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted, ref } from "vue";
+import { defineComponent, ref } from "vue";
 
 import "quasar/src/components/form/QForm.sass";
-
 import "quasar/src/css/variables.sass";
 import "quasar/src/components/responsive/QResponsive.sass";
 import "quasar/src/components/scroll-area/QScrollArea.sass";
 export default defineComponent({
-  name: "ContactForm",
+  name: "con",
   setup(props, { emit }) {
     const name = ref("");
     const email = ref("");
@@ -116,6 +118,18 @@ export default defineComponent({
 
 .contact-form {
   background-color: white;
+
+  border-radius: 10px;
+  padding: 20px;
+
+  &__desc {
+    color: #777;
+
+    font-style: italic;
+
+    position: relative;
+    bottom: 10px;
+  }
 
   &__form {
     &__toggle {

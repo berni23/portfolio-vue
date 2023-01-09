@@ -44,11 +44,14 @@ export default defineComponent({
     flex-direction: column;
     justify-content: left;
     padding: 0 100px;
+    margin-top: 100px;
     //  margin-right: 20px;
     // padding: 0 100px;
     text-align: left;
     align-items: left;
 
+    position: relative;
+    bottom: 30px;
     &__title {
     }
   }

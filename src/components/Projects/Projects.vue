@@ -59,7 +59,6 @@ export default defineComponent({
       margin: 0 10px;
       height: auto;
       padding: 0 8px;
-
       margin-bottom: 10px;
     }
   }

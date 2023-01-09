@@ -190,6 +190,7 @@ export default defineComponent({
       &__description {
         text-align: left;
         margin-left: 10px !important;
+        font-size: 1.1rem;
         line-height: 1.5rem;
       }
 
