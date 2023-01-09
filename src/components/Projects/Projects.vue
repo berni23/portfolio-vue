@@ -51,12 +51,15 @@ export default defineComponent({
   &__list {
     list-style-type: none;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     &__item {
-      width: 100% !important;
+      width: 45% !important;
       margin: 0 10px;
       height: auto;
       padding: 0 8px;
+
+      margin-bottom: 10px;
     }
   }
 }

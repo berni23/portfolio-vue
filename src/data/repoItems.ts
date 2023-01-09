@@ -19,5 +19,13 @@ export default  [
         name: "appstore link",
         link: "https://play.google.com/store/apps/details?id=com.berni.android.prototype1lanbase"
     }
+},
+
+{
+    name:"Language-database",
+    link:{
+        name: "appstore link",
+        link: "https://play.google.com/store/apps/details?id=com.berni.android.prototype1lanbase"
+    }
 }
 ]
