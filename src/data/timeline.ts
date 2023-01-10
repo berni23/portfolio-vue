@@ -7,16 +7,38 @@ import Bekodo from "./../assets/images/bekodo.svg";
 import Meetaitech from "./../assets/images/meetaitech.png";
 
 const data = [
+
+
   {
 
-    title: "Fullstack at Meetaitech",
-    date: "April 2021-Now",
+    title: "Fullstack engineer at Estimtrack",
+    date: "May 2022-Now",
     text:
-      " Currently wokring as a fullstack developer at the Meetaitech startup. Here, we develop a pioneer product that tracks the online meetings in companies and handles" +
-      " the data produced . My duties here include taking part of the UI design, implementing it using Vue and the Vuex library, managing the Database and implementing solutions" +
-      " in the backend side of the project with PHP and Laravel. ",
+      " At estimtrack I am responsible for the entire development of a Software that assists the workflow of employees in Hospitals.Here I designed the back-end architecture using the domain model" +
+      "and the hexagonal pattern. Also, I implemented a notification system using the websocket protocol" +
+      "some of the technologies used include PHP and Laravel for the backend and Vue for the frontend . ",
+    img: "./estimtrack_black.png",
+    location: "Barcelona",
+    categories: [{
+      tag: "work",
+      color: "#FF8C00",
+    }],
 
-    img: Meetaitech,
+    tags: ["PHP", "Javascript", "Laravel", "Vue", "Vuex"],
+
+    link: {
+      url: "https://estimtrack.com/",
+      text: "Estimtrack",
+    },
+  },
+
+  {
+
+    title: "Fullstack engineer at Meetaitech",
+    date: "April 2021-December 2022",
+    text:
+      "My duties in the company covered a wide range of variety . Some of the challenges  I faced included the development of  algorithm that synchronizes the user data produced"
+    +"from calendar apps like Outlook or Google calendar. I also optimized api calls by improving database queries, implemented fronted UI designs and maintained the product overall. ",
     location: "Barcelona",
     categories: [{
       tag: "work",
@@ -59,7 +81,7 @@ const data = [
     text:
       " Intensive software development master focused in web applications. The programm was project-based" +
       "several projects were developed under an agile environment and carefully following clean code patterns. During" +
-      " that period  i could learn full-stack technologies,  focusing more on the back-end side of web development.",
+      " that period  i could learn full-stack technologies whilst focusing more on the back-end side of web development .",
 
     img: assembler,
     location: "Barcelona",
