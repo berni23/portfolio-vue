@@ -24,8 +24,17 @@ export default  [
 },
 
 {
-    name:"moving-blocks"
-   
+    name:"moving-blocks",
+
+    link:{
+        name:"play here",
+        link:"https://sky-crash.netlify.app/"
+         
+    },
+
+    urlImage: "https://repository-images.githubusercontent.com/556212151/80562804-6d60-4472-9a40-f85c67728d4c"
+
+
 },
 {
     name:"portfolio-vue",
