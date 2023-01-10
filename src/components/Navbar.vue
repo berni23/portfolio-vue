@@ -2,7 +2,7 @@
   <div class="navbar">
     <div class="navbar__main-item navbar__section">
       <span class="navbar__section__item" @click="goToLanding" v-scroll-to
-        >BERNAT FERRER</span
+        >Home</span
       >
     </div>
     <div class="navbar__item navbar__section">

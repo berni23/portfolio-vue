@@ -66,11 +66,9 @@ export default defineComponent({
 @import "../assets/scss/keyframes.scss";
 
 .icons {
-  margin-top: 150px !important;
   z-index: 10;
   height: 150px;
   flex-wrap: wrap;
-  margin-top: 120px;
   text-align: center;
   align-items: center;
   display: flex;

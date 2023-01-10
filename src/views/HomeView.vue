@@ -1,5 +1,9 @@
 <template>
-  <span></span>
+  <div class="home-title">
+    <div class="home-title__title fade-in-custom">
+      {{ title }}
+    </div>
+  </div>
   <background />
   <navbar />
   <icons />
@@ -39,12 +43,38 @@ export default defineComponent({
 
   setup(props, { emit }) {
     document.title = "Bernat Ferrer";
+    let title = "Bernat Ferrer";
     onMounted(loadFavIcon);
-    return { isMobile };
+    return { isMobile, title };
   },
 });
 </script>
 <style lang="scss">
+@font-face {
+  font-family: "nasa";
+  src: url("../assets/fonts/Nasa.woff");
+}
+
+.home-title {
+  color: yellow;
+  font-size: 5rem;
+  font-family: "nasa";
+  font-weight: 800;
+
+  position: relative;
+  width: 100% !important;
+
+  margin-top: 80px;
+  // right: 35%;
+  // top: 6%;
+  // position: absolute;
+
+  &__title {
+    // margin: auto;
+
+    text-align: center;
+  }
+}
 body {
   margin: 0;
   padding: 0;
@@ -62,6 +92,10 @@ body {
 .contact-home {
   position: relative;
   bottom: 500px;
+}
+
+.fade-in-custom {
+  animation: fadeIn ease 7s;
 }
 
 @media screen and (max-width: 800px) {

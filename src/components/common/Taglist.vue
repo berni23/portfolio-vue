@@ -1,6 +1,8 @@
 <template>
   <ul class="taglist">
-    <li class="hashtag" v-for="tag in taglist" :key="tag">#{{ tag }}</li>
+    <li class="hashtag q-size-sm" v-for="tag in taglist" :key="tag">
+      #{{ tag }}
+    </li>
   </ul>
 </template>
 

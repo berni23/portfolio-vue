@@ -92,8 +92,7 @@ export default defineComponent({
     const message = ref("");
     const accept = ref("");
     const submitted = ref(false);
-    const formEndpoint =
-      "https://public.herotofu.com/v1/3af93d00-9041-11ed-a003-6f0b76086b1c";
+    const formEndpoint = process.env.VUE_APP_URL_CONTACT;
     const handleSubmit = () => {
       setTimeout(() => {
         submitted.value = true;

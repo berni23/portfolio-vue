@@ -36,6 +36,7 @@ export default defineComponent({
   padding: 5px;
   margin: 0 5px;
   letter-spacing: 1px;
+  height: 30px;
   text-transform: uppercase;
 }
 </style>
