@@ -1,11 +1,11 @@
 <template>
   <sectionTitle :section-title="'Projects'" />
 
-  <section-subtitle :section-title="'Repositories'" />
+  <!-- <section-subtitle :section-title="'Repositories'" /> -->
   <div class="projects">
     <ul class="projects__list">
       <li
-     class="projects__list__item"
+        class="projects__list__item"
         v-for="repoItem in repoItems"
         :key="repoItem.id"
       >
@@ -13,7 +13,7 @@
       </li>
     </ul>
   </div>
-  <section-subtitle :section-title="'Others'" />
+  <!-- <section-subtitle :section-title="'Others'" /> -->
 </template>
 <script lang="ts">
 import { defineComponent, onMounted, ref } from "vue";
