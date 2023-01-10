@@ -1,9 +1,11 @@
 <template>
   <sectionTitle :section-title="'Projects'" />
+
+  <section-subtitle :section-title="'Repositories'" />
   <div class="projects">
     <ul class="projects__list">
       <li
-        class="projects__list__item"
+     class="projects__list__item"
         v-for="repoItem in repoItems"
         :key="repoItem.id"
       >
@@ -11,23 +13,21 @@
       </li>
     </ul>
   </div>
+  <section-subtitle :section-title="'Others'" />
 </template>
-
 <script lang="ts">
 import { defineComponent, onMounted, ref } from "vue";
 import RepoItem from "../../CustomTypes/RepoItem";
 import repoData from "../../data/repoItems";
 import getProjectRepoItems from "../../Logic/Get/GetProjectRepoItems";
 import SectionTitle from "../common/SectionTitle.vue";
+import SectionSubtitle from "../common/SectionSubtitle.vue";
 import ProjectRepoItem from "./ProjectRepoItem.vue";
 export default defineComponent({
   name: "Projects",
-
-  components: { SectionTitle, ProjectRepoItem },
-
+  components: { SectionTitle, ProjectRepoItem, SectionSubtitle },
   setup(props, { emit }) {
     const repoItems = ref([] as Array<RepoItem>);
-
     onMounted(async () => {
       const data = (await getProjectRepoItems(repoData)).map(
         (result) => result.value
@@ -39,6 +39,9 @@ export default defineComponent({
 });
 </script>
 <style lang="scss">
+.q-icon {
+  margin: auto;
+}
 .projects {
   position: relative;
   width: 80%;
@@ -78,7 +81,6 @@ export default defineComponent({
         padding: 0px;
       }
     }
-
     .custom-icon {
       width: auto;
     }

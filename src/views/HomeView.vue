@@ -99,9 +99,11 @@ body {
 }
 
 @media screen and (max-width: 800px) {
-  .projects-home {
+  .projects-home,
+  .contact-home {
     position: relative;
-    bottom: 0;
+    bottom: 0px;
+    margin-top: 20px;
   }
 }
 </style>
