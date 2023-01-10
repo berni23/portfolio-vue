@@ -39,7 +39,9 @@ export default defineComponent({
     padding: 5px;
     display: flex;
     flex-direction: row;
-    justify-content:space-between * {
+    justify-content: space-between;
+
+    * {
       margin: 0 5px;
     }
 

@@ -28,9 +28,7 @@
         <div
           class="project-repo__content__header__section project-repo__content__header__forks"
         >
-          <fork-svg
-            class="custom-icon project-repo__content__header__starred"
-          />
+          <fork-svg class="custom-icon project-repo__content__header__fork" />
 
           <span class="project-repo__content__header__stargazers__count">{{
             repoItem.forksCount
@@ -152,6 +150,11 @@ export default defineComponent({
       justify-content: space-between;
       position: relative;
 
+      &__starred {
+        position: relative;
+        bottom: 1px;
+        right: 1px;
+      }
       &__stargazers,
       &__forks {
         margin: auto;
