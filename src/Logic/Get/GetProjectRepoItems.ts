@@ -33,6 +33,7 @@ function buildProjectRepoFromDataAndResponse(data:any ,responseData:any):RepoIte
     item.id = responseData.id
     item.tags = responseData.topics,
     item.stargazersCount = responseData.stargazers_count,
+    item.license = responseData.license,
     item.forksCount = responseData.forks_count,
     item.urlRepo = responseData.html_url 
     item.urlImage = data.urlImage?data.urlImage:null;

@@ -104,6 +104,7 @@ export default defineComponent({
     },
   },
   setup(props, { emit }) {
+    console.log("repo item", props.repoItem);
     return { repoItem: props.repoItem };
   },
 });
@@ -221,6 +222,10 @@ export default defineComponent({
         margin-top: 5px;
         text-align: center;
         transform: scale(0.8);
+
+        .custom-icon {
+          margin: 0 10px;
+        }
 
         a {
           color: inherit;
