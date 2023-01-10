@@ -26,19 +26,45 @@ export default  function getProjectRepoItems(data:Array<any>)  {
 }
 
 function buildProjectRepoFromDataAndResponse(data:any ,responseData:any):RepoItem {
-    responseData = responseData.data;
+    responseData = responseData.data
     const item = {} as RepoItem
-    item.name= data.name,
+    item.name= data.name
+    item.language = languageColor(responseData.language)
     item.description = responseData.description
     item.id = responseData.id
-    item.tags = responseData.topics,
-    item.stargazersCount = responseData.stargazers_count,
-    item.license = responseData.license,
-    item.forksCount = responseData.forks_count,
+    item.tags = responseData.topics
+    item.stargazersCount = responseData.stargazers_count
+    item.license = responseData.license
+    item.forksCount = responseData.forks_count
     item.urlRepo = responseData.html_url 
-    item.urlImage = data.urlImage?data.urlImage:null;
-    item.link = (data.link)?data.link:null;
-    item.visible =  responseData.visibility == "public" ? true : false;
+    item.urlImage = data.urlImage?data.urlImage:null
+    item.link = (data.link)?data.link:null
+    item.visible =  responseData.visibility == "public" ? true : false
     return item 
+}
 
+const arrayLanguage = {
+
+   vue: "#41b883",
+   javascript: "#f1e05a",
+   php : "#4F5D95",
+   kotlin: "#A97BFF"
+   
+}
+
+export function languageColor(language:string){
+  if (!language) return  null 
+
+  if (arrayLanguage[language.toLowerCase()]){
+    return   {
+  
+       name:language,
+      color: arrayLanguage[language.toLowerCase()]
+    }
+  }
+  return  {
+    name:language,
+    color:"red"
+
+  }
 }

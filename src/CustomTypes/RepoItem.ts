@@ -5,6 +5,7 @@ export default interface RepoItem {
     description: string,
     license:License|null,
     id:number,
+    language: Language|null,
     tags: Array<string>
     stargazersCount:number,
     forksCount:number
@@ -21,4 +22,11 @@ interface Link{
 interface License {
     name:string,
     url:string
+}
+
+interface Language { 
+
+    name:string,
+    color:string,
+    
 }
