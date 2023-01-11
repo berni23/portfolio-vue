@@ -48,7 +48,15 @@ const arrayLanguage = {
    vue: "#41b883",
    javascript: "#f1e05a",
    php : "#4F5D95",
-   kotlin: "#A97BFF"
+   kotlin: "#A97BFF",
+   go: "#00ADD8",
+   typescript: "#3178c6",
+   python: "#3572A5",
+   css: "#563d7c",
+   json: "#292929",
+   html : "#e34c26"
+
+
    
 }
 
