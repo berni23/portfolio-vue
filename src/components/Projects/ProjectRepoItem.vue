@@ -63,6 +63,17 @@
 
       <div class="project-repo__content__footer">
         <taglist :tags="repoItem.tags" />
+
+        <div v-if="repoItem.language" class="project-repo__content__lan">
+          <div
+            :style="{ backgroundColor: repoItem.language.color }"
+            class="project-repo__content__lan__circle circle"
+          ></div>
+          <div class="project-repo__content__lan__name">
+            {{ repoItem.language.name }}
+          </div>
+        </div>
+
         <div
           v-if="repoItem.license"
           class="project-repo__content__footer__license"
@@ -70,6 +81,8 @@
           <license-svg class="custom-icon" />
           <a :href="repoItem.license.url">{{ repoItem.license.name }}</a>
         </div>
+
+        <!-- <div v-else></div> -->
       </div>
     </div>
   </div>
@@ -137,7 +150,6 @@ export default defineComponent({
 
   &__content {
     display: flex;
-
     width: 100%;
     flex-direction: column;
     justify-content: space-between;
@@ -171,12 +183,29 @@ export default defineComponent({
         text-decoration: inherit;
         color: inherit;
         cursor: pointer;
-
         font-size: 1.2rem;
         margin-left: 10px;
-        // color: #777;
         color: #0969da;
         margin-right: 20px;
+      }
+    }
+
+    &__lan {
+      display: flex;
+      text-align: center;
+  
+      &__name {
+        text-align: center;
+        margin: 0 5px;
+        margin: auto;
+      }
+      &__circle {
+        width: 15px;
+        height: 15px;
+        margin: auto;
+        margin-right: 5px;
+
+        border-radius: 50%;
       }
     }
 
@@ -221,6 +250,10 @@ export default defineComponent({
         margin-top: 5px;
         text-align: center;
         transform: scale(0.8);
+
+        .custom-icon {
+          margin: 0 10px;
+        }
 
         a {
           color: inherit;
