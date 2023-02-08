@@ -12,7 +12,7 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, ref } from "vue-demi";
+import {defineComponent} from "vue-demi";
 
 export default defineComponent({
   name: "categories",

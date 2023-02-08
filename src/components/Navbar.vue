@@ -18,8 +18,8 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue-demi";
-import { useRouter } from "vue-router";
+import {defineComponent} from "vue-demi";
+import {useRouter} from "vue-router";
 import Background from "../components/Background.vue";
 
 export default defineComponent({

@@ -78,12 +78,13 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from "vue";
+import {defineComponent, ref} from "vue";
 
 import "quasar/src/components/form/QForm.sass";
 import "quasar/src/css/variables.sass";
 import "quasar/src/components/responsive/QResponsive.sass";
 import "quasar/src/components/scroll-area/QScrollArea.sass";
+
 export default defineComponent({
   name: "con",
   setup(props, { emit }) {

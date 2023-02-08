@@ -16,13 +16,14 @@
   <!-- <section-subtitle :section-title="'Others'" /> -->
 </template>
 <script lang="ts">
-import { defineComponent, onMounted, ref } from "vue";
+import {defineComponent, onMounted, ref} from "vue";
 import RepoItem from "../../CustomTypes/RepoItem";
 import repoData from "../../data/repoItems";
 import getProjectRepoItems from "../../Logic/Get/GetProjectRepoItems";
 import SectionTitle from "../common/SectionTitle.vue";
 import SectionSubtitle from "../common/SectionSubtitle.vue";
 import ProjectRepoItem from "./ProjectRepoItem.vue";
+
 export default defineComponent({
   name: "Projects",
   components: { SectionTitle, ProjectRepoItem, SectionSubtitle },

@@ -18,7 +18,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted } from "vue";
+import {defineComponent, onMounted} from "vue";
 import Background from "../components/Background.vue";
 import isMobile from "../Logic/Utils/isMobile";
 import Navbar from "../components/Navbar.vue";
@@ -29,6 +29,7 @@ import TimelineResp from "../components/Timeline/TimelineResp.vue";
 import loadFavIcon from "../Logic/Utils/loadFavIcon";
 
 import contact from "../components/Contact/Contact.vue";
+
 export default defineComponent({
   name: "HomeView",
   components: {
