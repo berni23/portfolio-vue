@@ -15,7 +15,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, onMounted } from "vue-demi";
+import {defineComponent, onMounted, ref} from "vue-demi";
 import isMobile from "../../Logic/Utils/isMobile";
 import data from "../../data/timeline";
 import TimelineItem from "./TimelineItem.vue";

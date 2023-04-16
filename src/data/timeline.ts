@@ -11,10 +11,35 @@ const data = [
 
   {
 
-    title: "Fullstack engineer at Estimtrack",
-    date: "May 2022-Now",
+    title: "Backend Software Engineer at Mad Collective",
+    date: "February 2022-Now",
     text:
-      " At estimtrack I am responsible for the entire development of a Software that assists the workflow of employees in Hospitals.Here I designed the back-end architecture using the domain model" +
+      " At Mad Collective I am part of a team in charge of several back-office projects for accounting and billing. We use serverless infrastructure deployed on AWS and other tools that "+
+      "provide a high automatization worfklow.",
+     
+    img: "./mad-collective-logo-red-150.png",
+    location: "Barcelona",
+    categories: [{
+      tag: "work",
+      color: "#FF8C00",
+    }],
+
+    tags: ["PHP", "AWS","CircleCI" ,"Docker", "Nodejs", "Terraform","Datadog","Serverless"],
+
+    link: {
+      url: "https://www.mad.io/",
+      text: "Mad Collective",
+    },
+  },
+
+
+
+  {
+
+    title: "Fullstack Engineer at Estimtrack",
+    date: "May 2022- Gen 2023",
+    text:
+      " At estimtrack I was responsible for the entire development of a Software that assists the workflow of employees in Hospitals. Here I designed the back-end architecture using the domain model" +
       "and the hexagonal pattern. Also, I implemented a notification system using the websocket protocol" +
       "some of the technologies used include PHP and Laravel for the backend and Vue for the frontend . ",
     img: "./estimtrack_black.png",
@@ -24,7 +49,7 @@ const data = [
       color: "#FF8C00",
     }],
 
-    tags: ["PHP", "Javascript", "Laravel", "Vue", "Vuex"],
+    tags: ["PHP", "DDD", "Socket Protocol", "Vue"],
 
     link: {
       url: "https://estimtrack.com/",
@@ -34,18 +59,19 @@ const data = [
 
   {
 
-    title: "Fullstack engineer at Meetaitech",
+    title: "Fullstack Engineer at Meetaitech",
     date: "April 2021-December 2022",
     text:
-      "My duties in the company covered a wide range of variety . Some of the challenges  I faced included the development of  algorithm that synchronizes the user data produced"
-    +"from calendar apps like Outlook or Google calendar. I also optimized api calls by improving database queries, implemented fronted UI designs and maintained the product overall. ",
+      "My duties in the company covered a wide range of variety . Some of the challenges I faced included the development of algorithm that synchronizes the user data produced"
+    +"from calendar apps like Outlook or Google calendar. I also optimized api calls by improving database queries, implemented fronted UI designs and maintained the product overall.",
     location: "Barcelona",
+    img: Meetaitech,
     categories: [{
       tag: "work",
       color: "#FF8C00",
     }],
 
-    tags: ["PHP", "Javascript", "Laravel", "Vue", "Vuex"],
+    tags: ["PHP","Algorithms", "Javascript", "Laravel", "Vue", "Webhooks"],
 
     link: {
       url: "https://meetaitech.com/",
@@ -67,7 +93,7 @@ const data = [
     }],
 
 
-    tags: ["python", "javascript", "html", "css", "django", "flask", "git"],
+    tags: ["Python", "Javascript", "HTML", "CSS", "Django", "Flask"],
 
     link: {
       url: "https://www.bekodo.com/",
@@ -96,14 +122,14 @@ const data = [
     }],
 
     tags: [
-      "javascript",
-      "php",
-      "html",
-      "css",
-      "git",
-      "laravel",
-      "react",
-      "nodejs",
+      "Javascript",
+      "PHP",
+      "HTML",
+      "CSS",
+      "Git",
+      "Laravel",
+      "React",
+      "Nodejs",
       "MVC",
       "RestFUL",
     ],
@@ -152,15 +178,14 @@ const data = [
     }],
 
     tags: [
-      "physics",
-      "python",
-      "jupyter",
-      "linux",
-      "latex",
-      "seaborn-python",
-      "artist-python",
-      "numpy-python",
-      "scipy-python",
+      "Physics",
+      "Python",
+      "Jupyter",
+      "Linux",
+      "Latex",
+      "Numerical Methods",
+      "Computer Science"
+    
     ],
 
     img: LMU,

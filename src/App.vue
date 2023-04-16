@@ -3,7 +3,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted } from "vue";
+import {defineComponent, onMounted} from "vue";
 import loadFavIcon from "./Logic/Utils/loadFavIcon";
 
 export default defineComponent({

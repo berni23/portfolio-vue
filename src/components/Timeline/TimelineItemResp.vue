@@ -33,11 +33,12 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, ref } from "vue-demi";
+import {computed, defineComponent, ref} from "vue-demi";
 import isMobile from "../../Logic/Utils/isMobile";
 
 import Taglist from "../common/Taglist.vue";
 import categories from "./Categories.vue";
+
 export default defineComponent({
   name: "TimelineItem",
   props: ["data", "id"],

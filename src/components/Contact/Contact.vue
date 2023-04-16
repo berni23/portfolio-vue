@@ -8,7 +8,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import {defineComponent} from "vue";
 import contactForm from "./ContactForm.vue";
 import SectionTitle from "../common/SectionTitle.vue";
 

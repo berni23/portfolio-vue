@@ -1,6 +1,4 @@
-
-
-import { defineStore } from "pinia"
+import {defineStore} from "pinia"
 import RepoItem from "../CustomTypes/RepoItem"
 
 export const useProjectsStore = defineStore('projects',{
@@ -16,7 +14,7 @@ export const useProjectsStore = defineStore('projects',{
     actions :{
         updateRepoItems(repoItems:Array<RepoItem>){
             this._repoItemsLastFetched =  Date.now()
-            this._arrayRepoItems = repoItems;   
+            this._arrayRepoItems = repoItems;
         }
     },
 

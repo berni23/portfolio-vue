@@ -68,8 +68,8 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
-import { getDataFromRepo } from "../../Logic/Repositories/GithubRepository";
+import {defineComponent} from "vue";
+import {getDataFromRepo} from "../../Logic/Repositories/GithubRepository";
 import repoSvg from "../common/svg/repoSvg.vue";
 import licenseSvg from "../common/svg/licenseSvg.vue";
 import SectionTitle from "../common/SectionTitle.vue";

@@ -39,7 +39,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted, ref } from "vue-demi";
+import {defineComponent, ref} from "vue-demi";
 import Github from "./../assets/images/github.svg";
 import Linkedin from "./../assets/images/linkedin.svg";
 import Stack from "./../assets/images/stack-overflow.svg";
@@ -53,7 +53,7 @@ export default defineComponent({
       Github,
       Linkedin,
       Stack,
-      cvLink: " ./CV_Bernat.pdf",
+      cvLink: "https://s3-2023.s3.eu-central-1.amazonaws.com/CV_Bernat_English.pdf",
       linkedinLink: "https://www.linkedin.com/in/bernat-ferrer/",
       githubLink: "https://github.com/berni23",
       stackLink: "https://stackoverflow.com/users/7569812/berni",

@@ -89,7 +89,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType } from "vue";
+import {defineComponent, PropType} from "vue";
 import repoSvg from "../common/svg/repoSvg.vue";
 import licenseSvg from "../common/svg/licenseSvg.vue";
 import SectionTitle from "../common/SectionTitle.vue";
@@ -193,7 +193,7 @@ export default defineComponent({
     &__lan {
       display: flex;
       text-align: center;
-  
+
       &__name {
         text-align: center;
         margin: 0 5px;
