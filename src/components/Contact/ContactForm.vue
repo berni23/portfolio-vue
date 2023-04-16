@@ -1,7 +1,7 @@
 ]
 <template>
   <div class="contact-form">
-    <p class="contact-form__desc">
+    <p class="contact-form__desc"> 
       If you want to collaborate for a project please don't hesitate to contact
       me using the following form
     </p>
