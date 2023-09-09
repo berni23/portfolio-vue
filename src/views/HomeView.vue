@@ -18,7 +18,7 @@
 </template>
 
 <script lang="ts">
-import {defineComponent, onMounted} from "vue";
+import { defineComponent, onMounted } from "vue";
 import Background from "../components/Background.vue";
 import isMobile from "../Logic/Utils/isMobile";
 import Navbar from "../components/Navbar.vue";
@@ -100,6 +100,11 @@ body {
 }
 
 @media screen and (max-width: 800px) {
+  .home-title__title {
+    margin-top: 0px;
+    font-size: 1rem !important;
+  }
+
   .projects-home,
   .contact-home {
     position: relative;
