@@ -8,11 +8,9 @@ import Meetaitech from "./../assets/images/meetaitech.png";
 
 const data = [
 
-
   {
-
     title: "Backend Software Engineer at Mad Collective",
-    date: "February 2022-Now",
+    date: "February 2023-Now",
     text:
       " At Mad Collective I am part of a team in charge of several back-office projects for accounting and billing. We use serverless infrastructure deployed on AWS and other tools that "+
       "provide a high automatization worfklow.",
