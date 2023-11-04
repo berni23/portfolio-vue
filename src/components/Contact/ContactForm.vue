@@ -1,7 +1,7 @@
 ]
 <template>
   <div class="contact-form">
-    <p class="contact-form__desc"> 
+    <p class="contact-form__desc">
       If you want to collaborate for a project please don't hesitate to contact
       me using the following form
     </p>
@@ -15,10 +15,8 @@
         filled
         required
         v-model="email"
-        label="Your email"
         lazy-rules
-        type="email"
-        hint="email"
+        label="email"
         placeholder="Email"
         name="email"
         :rules="[
@@ -31,19 +29,16 @@
         filled
         v-model="name"
         name="name"
-        label="Your name *"
-        hint="Name and surname"
+        label="Your name"
         lazy-rules
         :rules="[(val) => (val && val.length > 0) || 'Please type something']"
       />
-
       <q-input
         type="textarea"
         filled
         required
         name="message"
         label="message"
-        hint="Message"
         style="height: 200px; max-width: 300px"
         v-model="message"
         lazy-rules
@@ -51,7 +46,6 @@
           (val) => (val !== null && val !== '') || 'Please type your message',
         ]"
       />
-
       <q-toggle
         v-model="accept"
         class="contact-form__form__toggle"
@@ -71,14 +65,14 @@
     </q-form>
 
     <div v-if="submitted" class="text-center mt-10">
-      <h2 class="text-2xl">Thanks you!</h2>
+      <h2 class="text-2xl">Thank you!</h2>
       <div class="text-md">We'll be in touch soon.</div>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import {defineComponent, ref} from "vue";
+import { defineComponent, ref } from "vue";
 
 import "quasar/src/components/form/QForm.sass";
 import "quasar/src/css/variables.sass";
@@ -86,7 +80,7 @@ import "quasar/src/components/responsive/QResponsive.sass";
 import "quasar/src/components/scroll-area/QScrollArea.sass";
 
 export default defineComponent({
-  name: "con",
+  name: "ContactForm",
   setup(props, { emit }) {
     const name = ref("");
     const email = ref("");
@@ -99,7 +93,6 @@ export default defineComponent({
         submitted.value = true;
       }, 100);
     };
-
     return {
       accept,
       message,
@@ -118,15 +111,12 @@ export default defineComponent({
 
 .contact-form {
   background-color: white;
-
   border-radius: 10px;
   padding: 20px;
 
   &__desc {
     color: #777;
-
     font-style: italic;
-
     position: relative;
     bottom: 10px;
   }

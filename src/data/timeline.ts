@@ -10,10 +10,13 @@ const data = [
 
   {
     title: "Backend Software Engineer at Mad Collective",
-    date: "February 2023-Now",
+    date: "February 2023-Present",
     text:
-      " At Mad Collective I am part of a team in charge of several back-office projects for accounting and billing. We use serverless infrastructure deployed on AWS and other tools that "+
-      "provide a high automatization worfklow.",
+      " At Mad Collective I take part in the development and maintenance of back-office apps related "+
+      "with accounting. Also, we are in charge of the integration of our apps with different payment "+
+      "processors. We use highly automated pipelines for deploying (circleci, terraform), recieving alerts "+
+      "(datadog, pagerduty) and sending domain events (lambda functions with SQS, SNS) to create "+
+      "highly automated workflows.",
      
     img: "./mad-collective-logo-red-150.png",
     location: "Barcelona",
@@ -22,7 +25,7 @@ const data = [
       color: "#FF8C00",
     }],
 
-    tags: ["PHP", "AWS","CircleCI" ,"Docker", "Nodejs", "Terraform","Datadog","Serverless"],
+    tags: ["PHP", "AWS","CircleCI" ,"Docker", "Nodejs", "Terraform","Datadog","Vue3","Serverless","Postman"],
 
     link: {
       url: "https://www.mad.io/",
@@ -30,16 +33,13 @@ const data = [
     },
   },
 
-
-
   {
 
     title: "Fullstack Engineer at Estimtrack",
     date: "May 2022- Gen 2023",
-    text:
-      " At estimtrack I was responsible for the entire development of a Software that assists the workflow of employees in Hospitals. Here I designed the back-end architecture using the domain model" +
-      "and the hexagonal pattern. Also, I implemented a notification system using the websocket protocol" +
-      "some of the technologies used include PHP and Laravel for the backend and Vue for the frontend . ",
+    text: "At Estimtrack I was responsible for the entire development of a software that assists the workflow of employees in Hospitals. "+
+    "There I designed the back-end architecture using the domain model and the hexagonal "+
+    "pattern. Also, I implemented a notification system using web sockets.",
     img: "./estimtrack_black.png",
     location: "Barcelona",
     categories: [{
@@ -59,9 +59,10 @@ const data = [
 
     title: "Fullstack Engineer at Meetaitech",
     date: "April 2021-December 2022",
-    text:
-      "My duties in the company covered a wide range of variety . Some of the challenges I faced included the development of algorithm that synchronizes the user data produced"
-    +"from calendar apps like Outlook or Google calendar. I also optimized api calls by improving database queries, implemented fronted UI designs and maintained the product overall.",
+    text:  "At Meetaitech I took part in all aspects of the software creation. There, I developed an "+
+    "algorithm that synchronizes the user data coming from calendar apps like Outlook or Google calendar. "+
+    "I also optimized api calls by improving database queries, implemented UI designs and maintained the product overall.",
+    
     location: "Barcelona",
     img: Meetaitech,
     categories: [{
@@ -81,7 +82,9 @@ const data = [
     title: "Backend developer at Bekodo",
     date: "March 2021 - April 2021",
     text:
-      " Backend developer at Bekodo. Working with python and using frameworks like Django or Flask.",
+      " At Bekodo I developed a software in charge of loading  data from spreadsheets to the cloud in order to facilitate the "+
+      "transition of small physical businesses into the e-commerce model. "+
+      " There I work with python as the backend language, using frameworks like Django and Flask.",
 
     img: Bekodo,
     location: "Barcelona",
@@ -89,10 +92,7 @@ const data = [
       tag: "work",
       color: "#FF8C00",
     }],
-
-
-    tags: ["Python", "Javascript", "HTML", "CSS", "Django", "Flask"],
-
+    tags: ["Python", "Javascript", "HTML5", "CSS", "Django", "Flask"],
     link: {
       url: "https://www.bekodo.com/",
       text: "Bekodo",
