@@ -36,7 +36,7 @@ const data = [
   {
 
     title: "Fullstack Engineer at Estimtrack",
-    date: "May 2022- Gen 2023",
+    date: "May 2022- December 2022",
     text: "At Estimtrack I was responsible for the entire development of a software that assists the workflow of employees in Hospitals. "+
     "There I designed the back-end architecture using the domain model and the hexagonal "+
     "pattern. Also, I implemented a notification system using web sockets.",
