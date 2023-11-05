@@ -12,11 +12,10 @@ const data = [
     title: "Backend Software Engineer at Mad Collective",
     date: "February 2023-Present",
     text:
-      " At Mad Collective I take part in the development and maintenance of back-office apps related "+
-      "with accounting. Also, we are in charge of the integration of our apps with different payment "+
-      "processors. We use highly automated pipelines for deploying (circleci, terraform), recieving alerts "+
-      "(datadog, pagerduty) and sending domain events (lambda functions with SQS, SNS) to create "+
-      "highly automated workflows.",
+    "At Mad Collective I take part in the development and maintenance of back-office apps related with accounting. "+
+    "Also, we are in charge of the integration of our apps with different payment processors. We maintain our own deployment pipelines "+
+    "using circleci and terraform, use integrated tools for receiving alerts (datadog, pagerduty) "+
+     "and AWS resources for sending domain events (Lambda functions with SQS, SNS). These tools enable us to create highly automated workflows.",
      
     img: "./mad-collective-logo-red-150.png",
     location: "Barcelona",
