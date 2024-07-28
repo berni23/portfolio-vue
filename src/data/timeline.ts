@@ -8,9 +8,30 @@ import Meetaitech from "./../assets/images/meetaitech.png";
 
 const data = [
 
+
+  {
+    title: "Data Engineer at Mad Collective",
+    date: "December 2023-Present",
+    text:"Within Mad collective I found a great oportunitry to get out of my confort zone and learn the job of data engineering. "+
+    "Currently, I design develop, and maintain several data pipelines that serve different business needs. We have a cross-department component "+
+    "in charge of delivering severl millions of events daily. For that we use tools like Nifi, Pyspark, aws glue, aws lambda and many others",
+    img: "./mad-collective-logo-red-150.png",
+    location: "Barcelona",
+    categories: [{
+      tag: "work",
+      color: "#FF8C00",
+    }],
+
+    tags: ["Python", "AWS","CircleCI" ,"Docker", "Terraform","Datadog"],
+
+    link: {
+      url: "https://www.mad.io/",
+      text: "Mad Collective",
+    },
+  },
   {
     title: "Backend Software Engineer at Mad Collective",
-    date: "February 2023-Present",
+    date: "February 2023- December 2023",
     text:
     "At Mad Collective I take part in the development and maintenance of back-office apps related with accounting. "+
     "Also, we are in charge of the integration of our apps with different payment processors. We maintain our own deployment pipelines "+

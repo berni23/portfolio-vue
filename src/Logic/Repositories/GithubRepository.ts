@@ -1,23 +1,23 @@
 
 
 const owner = "berni23"
+const { Octokit } = require("@octokit/rest");
 
-function  createOctokit(){
-    const { Octokit } = require("@octokit/rest");
-     const client =  new Octokit({
-        auth: process.env.VUE_APP_GITHUB_TOKEN,
-        })
-
-        return client
+async function  createOctokit(){
+    const client =  new Octokit({
+       
+     })
+    return await client
 
 }
 
 export async function getDataFromRepo(repo:string): Promise<Response>{
 
-        return  await createOctokit().request("GET /repos/" +owner+"/"+ repo,{
+        const  token = process.env.VUE_APP_GITHUB_TOKEN
+        return  (await createOctokit()).request("GET /repos/" +owner+"/"+ repo,{
         owner,
         repo,
-        headers:{ authorization : `token ${process.env.VUE_APP_GITHUB_TOKEN}`}
+        headers:{ authorization : `token ${token}`}
         });
 }
 
