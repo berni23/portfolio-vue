@@ -34,6 +34,15 @@
       >
         <img :src="Stack" class="linkedin-img" alt="stack-overflow" />
       </a>
+
+      <a
+        :href="instagramLink"
+        class="icons__content__icon"
+        rel="noreferrer"
+        target="_blank"
+      >
+        <img :src="Instagram" class="instagram-img" alt="stack-overflow" />
+      </a>
     </div>
   </div>
 </template>
@@ -43,7 +52,7 @@ import {defineComponent, ref} from "vue-demi";
 import Github from "./../assets/images/github.svg";
 import Linkedin from "./../assets/images/linkedin.svg";
 import Stack from "./../assets/images/stack-overflow.svg";
-
+import Instagram from "./../assets/images/instagram.svg";
 export default defineComponent({
   name: "Icons",
   setup(props, { emit }) {
@@ -53,10 +62,12 @@ export default defineComponent({
       Github,
       Linkedin,
       Stack,
+      Instagram,
       cvLink: "https://s3-2023.s3.eu-central-1.amazonaws.com/CV_Bernat_English.pdf",
       linkedinLink: "https://www.linkedin.com/in/bernat-ferrer/",
       githubLink: "https://github.com/berni23",
       stackLink: "https://stackoverflow.com/users/7569812/berni",
+      instagramLink :"https://www.instagram.com/brny23/"
     };
   },
 });
@@ -104,6 +115,12 @@ export default defineComponent({
   height: 50px;
   background-color: black;
   color: white;
+}
+
+.instagram-img {
+  width: 50px;
+  height: 50px;
+  opacity: 0.7;
 }
 
 .cv {

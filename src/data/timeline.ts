@@ -12,9 +12,9 @@ const data = [
   {
     title: "Data Engineer at Mad Collective",
     date: "December 2023-Present",
-    text:"Within Mad collective I found a great oportunitry to get out of my confort zone and learn the job of data engineering. "+
-    "Currently, I design develop, and maintain several data pipelines that serve different business needs. We have a cross-department component "+
-    "in charge of delivering severl millions of events daily. For that we use tools like Nifi, Pyspark, aws glue, aws lambda and many others",
+    text:"Within Mad collective I found a great opportunity to get out of my confort zone and learn the profession of data engineering. "+
+    "I am currently designing, developing and maintaining several data pipelines that serve different business needs. Within our apps we"+
+    "deliver and process several millions of events daily. For that we use tools like Nifi, Pyspark, redshift, aws glue, aws lambda and many more",
     img: "./mad-collective-logo-red-150.png",
     location: "Barcelona",
     categories: [{
@@ -31,13 +31,10 @@ const data = [
   },
   {
     title: "Backend Software Engineer at Mad Collective",
-    date: "February 2023- December 2023",
+    date: "February 2023 - Present",
     text:
-    "At Mad Collective I take part in the development and maintenance of back-office apps related with accounting. "+
-    "Also, we are in charge of the integration of our apps with different payment processors. We maintain our own deployment pipelines "+
-    "using circleci and terraform, use integrated tools for receiving alerts (datadog, pagerduty) "+
-     "and AWS resources for sending domain events (Lambda functions with SQS, SNS). These tools enable us to create highly automated workflows.",
-     
+    "At Mad Collective I take part in the development and maintenance of a billing gateway that serves as a middleware between our apps and"+
+    "third party payment processors. Also we maintain and develop back office apps that serve internal business needs.",
     img: "./mad-collective-logo-red-150.png",
     location: "Barcelona",
     categories: [{
@@ -57,7 +54,7 @@ const data = [
 
     title: "Fullstack Engineer at Estimtrack",
     date: "May 2022- December 2022",
-    text: "At Estimtrack I was responsible for the entire development of a software that assists the workflow of employees in Hospitals. "+
+    text: "At Estimtrack I was responsible for the entire development of a software that assists the workflow of employees in hospitals. "+
     "There I designed the back-end architecture using the domain model and the hexagonal "+
     "pattern. Also, I implemented a notification system using web sockets.",
     img: "./estimtrack_black.png",
@@ -82,7 +79,7 @@ const data = [
     text:  "At Meetaitech I took part in all aspects of the software creation. There, I developed an "+
     "algorithm that synchronizes the user data coming from calendar apps like Outlook or Google calendar. "+
     "I also optimized api calls by improving database queries, implemented UI designs and maintained the product overall.",
-    
+
     location: "Barcelona",
     img: Meetaitech,
     categories: [{
@@ -203,7 +200,7 @@ const data = [
       "Latex",
       "Numerical Methods",
       "Computer Science"
-    
+
     ],
 
     img: LMU,
