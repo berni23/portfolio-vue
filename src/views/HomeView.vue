@@ -7,9 +7,12 @@
   <background />
   <navbar />
   <icons />
-  <div>
+  <div class="timeline-home">
     <timeline-resp v-if="isMobile" />
     <timeline v-else />
+  </div>
+  <div class="articles-home">
+    <articles />
   </div>
   <div class="projects-home">
     <projects />
@@ -24,6 +27,7 @@ import isMobile from "../Logic/Utils/isMobile";
 import Navbar from "../components/Navbar.vue";
 import Icons from "../components/Icons.vue";
 import Timeline from "../components/Timeline/Timeline.vue";
+import Articles from "../components/Articles/Articles.vue";
 import Projects from "../components/Projects/Projects.vue";
 import TimelineResp from "../components/Timeline/TimelineResp.vue";
 import loadFavIcon from "../Logic/Utils/loadFavIcon";
@@ -38,6 +42,7 @@ export default defineComponent({
     Timeline,
     Icons,
     TimelineResp,
+    Articles,
     Projects,
     contact,
   },
@@ -89,6 +94,11 @@ body {
   margin: 0;
   padding: 0;
 }
+.timeline-home {
+  margin-bottom: -300px;
+}
+
+.articles-home,
 .projects-home,
 .contact-home {
   position: relative;
@@ -105,6 +115,7 @@ body {
     font-size: 1rem !important;
   }
 
+  .articles-home,
   .projects-home,
   .contact-home {
     position: relative;

@@ -23,13 +23,13 @@ dist-ssr
 *.sln
 *.sw?
 
-#env 
-
-
+#env
 
 .env
 
-
+.playwright-mcp
 #others
 
 exampleGithubJSON.json
+
+.Claude

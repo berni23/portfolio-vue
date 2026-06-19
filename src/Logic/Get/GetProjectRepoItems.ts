@@ -3,24 +3,29 @@ import {useProjectsStore} from "../../stores/projects";
 import {getDataFromRepo} from "../Repositories/GithubRepository";
 
 
-async function fetchProjectRepoItems(data:Array<any>): Promise<any>  {
-    const promises = []  as Array<Promise<void|RepoItem>>
+async function fetchProjectRepoItems(data:Array<any>): Promise<Array<RepoItem>>  {
+    const promises = []  as Array<Promise<RepoItem>>
       data.forEach((item)=>{
        promises.push(getDataFromRepo(item.name).then((response)=> buildProjectRepoFromDataAndResponse(item,response)))
       }
     )
-    return  await Promise.allSettled(promises)
-
+    const settled = await Promise.allSettled(promises)
+    return settled
+      .filter((result): result is PromiseFulfilledResult<RepoItem> => result.status === "fulfilled")
+      .map((result) => result.value)
 }
-export default  function getProjectRepoItems(data:Array<any>)  {
+export default  async function getProjectRepoItems(data:Array<any>): Promise<Array<RepoItem>>  {
 
       const projectsStore = useProjectsStore()
       if(projectsStore.shouldFetchRepoItems){
-       return fetchProjectRepoItems(data).then((resData)=>{
-        projectsStore.updateRepoItems(resData)
+        const resData = await fetchProjectRepoItems(data)
+        // Only cache a successful, non-empty fetch — otherwise a transient failure
+        // would be persisted and block re-fetching for the full cache window.
+        if (resData.length) {
+          projectsStore.updateRepoItems(resData)
+        }
         return resData
-      })
- }
+      }
   return projectsStore.repoItems;
 }
 

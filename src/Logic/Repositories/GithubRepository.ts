@@ -1,24 +1,15 @@
-
+import { Octokit } from "@octokit/rest";
 
 const owner = "berni23"
-const { Octokit } = require("@octokit/rest");
 
-async function  createOctokit(){
-    const client =  new Octokit({
-       
-     })
-    return await client
-
+function createOctokit() {
+    const token = process.env.VUE_APP_GITHUB_TOKEN
+    // Only authenticate when a token is actually present. Passing `auth: undefined`
+    // (e.g. when the env var didn't load) makes Octokit send `token undefined`,
+    // which GitHub rejects with 401 even for public repos.
+    return new Octokit(token ? { auth: token } : {})
 }
 
-export async function getDataFromRepo(repo:string): Promise<Response>{
-
-        const  token = process.env.VUE_APP_GITHUB_TOKEN
-        return  (await createOctokit()).request("GET /repos/" +owner+"/"+ repo,{
-        owner,
-        repo,
-        headers:{ authorization : `token ${token}`}
-        });
+export async function getDataFromRepo(repo: string) {
+    return createOctokit().request("GET /repos/{owner}/{repo}", { owner, repo });
 }
-
-

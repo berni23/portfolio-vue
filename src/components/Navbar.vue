@@ -7,6 +7,9 @@
     </div>
     <div class="navbar__item navbar__section">
       <span @click="goToTimeline" class="navbar__section__item"> Timeline</span>
+      <span @click="goToArticles" class="contact navbar__section__item"
+        >Articles</span
+      >
       <span @click="goToProjects" class="contact navbar__section__item"
         >Projects</span
       >
@@ -30,11 +33,12 @@ export default defineComponent({
     const router = useRouter();
 
     const goToTimeline = () => router.push("/#timeline");
+    const goToArticles = () => router.push("/#articles");
     const goToProjects = () => router.push("/#projects");
     const goToContact = () => router.push("/#contact");
     const goToLanding = () => router.push("/#landing");
 
-    return { goToTimeline, goToProjects, goToContact, goToLanding };
+    return { goToTimeline, goToArticles, goToProjects, goToContact, goToLanding };
   },
 });
 </script>
