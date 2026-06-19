@@ -63,7 +63,7 @@ export default defineComponent({
       Linkedin,
       Stack,
       Instagram,
-      cvLink: "https://s3-2023.s3.eu-central-1.amazonaws.com/CV_Bernat_English.pdf",
+      cvLink: "/CV_Bernat.pdf",
       linkedinLink: "https://www.linkedin.com/in/bernat-ferrer/",
       githubLink: "https://github.com/berni23",
       stackLink: "https://stackoverflow.com/users/7569812/berni",

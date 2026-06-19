@@ -7,14 +7,30 @@ import Bekodo from "./../assets/images/bekodo.svg";
 import Meetaitech from "./../assets/images/meetaitech.png";
 
 const data = [
+    {
+    title: "Volunteer at migracode",
+    date: "March 2026-Present",
+    text:"At the present moment I am a volunteer at migracode, a non profit organization that provides free coding education to refugees and migrants. I am mentoring a group of students with the goal of helping them find a job in the tech industry.",
+    img: "./migracode.png",
+    location: "Barcelona",
+    categories: [{
+      tag: "volunteering",
+      color: "#2c9e15",
+    }],
 
+    tags: ["Python", "Teaching", "Mentoring"],
 
+    link: {
+      url: "https://migracode.org/",
+      text: "Migracode",
+    },
+  },
   {
     title: "Data Engineer at Mad Collective",
     date: "December 2023-Present",
-    text:"Within Mad collective I found a great opportunity to get out of my confort zone and learn the profession of data engineering. "+
+    text:"In Mad collective I also found a great opportunity to get out of my confort zone and learn the profession of data engineering. "+
     "I am currently designing, developing and maintaining several data pipelines that serve different business needs. Within our apps we"+
-    "deliver and process several millions of events daily. For that we use tools like Nifi, Pyspark, redshift, aws glue, aws lambda and many more",
+    " deliver and process several millions of events daily. For that we use tools like Nifi, Pyspark, redshift, aws glue, aws lambda and many more.",
     img: "./mad-collective-logo-red-150.png",
     location: "Barcelona",
     categories: [{
@@ -22,7 +38,7 @@ const data = [
       color: "#FF8C00",
     }],
 
-    tags: ["Python", "AWS","CircleCI" ,"Docker", "Terraform","Datadog"],
+    tags: ["Python","Agentic automation","AWS","CircleCI" ,"Docker", "Terraform","Datadog"],
 
     link: {
       url: "https://www.mad.io/",
@@ -31,7 +47,7 @@ const data = [
   },
   {
     title: "Backend Software Engineer at Mad Collective",
-    date: "February 2023 - Present",
+    date: "February 2023 - April 2024",
     text:
     "At Mad Collective I take part in the development and maintenance of a billing gateway that serves as a middleware between our apps and"+
     "third party payment processors. Also we maintain and develop back office apps that serve internal business needs.",

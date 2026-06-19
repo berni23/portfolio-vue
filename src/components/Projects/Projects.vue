@@ -30,10 +30,7 @@ export default defineComponent({
   setup(props, { emit }) {
     const repoItems = ref([] as Array<RepoItem>);
     onMounted(async () => {
-      const data = (await getProjectRepoItems(repoData)).map(
-        (result) => result.value
-      ) as Array<RepoItem>;
-      repoItems.value = data;
+      repoItems.value = await getProjectRepoItems(repoData);
     });
     return { repoItems };
   },
