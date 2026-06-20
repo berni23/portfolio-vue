@@ -1,9 +1,13 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/092f157f-deed-4d59-bbab-9ef3f3936877/deploy-status)](https://app.netlify.com/projects/rad-horse-14ec7c/deploys) 
+
+
 
 # RUN
 
 1) yarn install
 2) yarn run serve
 3) Open   http://localhost:8080/
+
 
 
 
