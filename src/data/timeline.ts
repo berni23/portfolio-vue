@@ -136,9 +136,7 @@ const data = [
     title: " Software development master at Assembler",
     date: "June 2020 - Feb 2021",
     text:
-      " Intensive software development master focused in web applications. The programm was project-based" +
-      "several projects were developed under an agile environment and carefully following clean code patterns. During" +
-      " that period  i could learn full-stack technologies whilst focusing more on the back-end side of web development .",
+      " Software development master focused in learning full-stack and building end-to-end web apps",
 
     img: assembler,
     location: "Barcelona",
