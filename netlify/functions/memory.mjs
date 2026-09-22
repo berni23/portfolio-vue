@@ -21,7 +21,10 @@ export default async (req) => {
   if (req.headers.get('x-api-key') !== secret) return json({ error: 'unauthorized' }, 401);
 
   const store = getStore('vapi-memory');
-  const notes = (await store.get(KEY, { type: 'json' })) || [];
+  // Blobs reads are eventually consistent by default, so a note saved during a
+  // call would not be visible on the next read. It also matters for POST, which
+  // reads-then-appends: a stale read silently drops notes.
+  const notes = (await store.get(KEY, { type: 'json', consistency: 'strong' })) || [];
 
   if (req.method === 'GET') {
     if (!notes.length) {
