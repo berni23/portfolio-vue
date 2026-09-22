@@ -1134,6 +1134,11 @@
   resolved "https://registry.npmjs.org/@leichtgewicht/ip-codec/-/ip-codec-2.0.4.tgz"
   integrity sha512-Hcv+nVC0kZnQ3tD9GVu5xSMR4VVYOteQIr/hwFPVEvPdlXqgGEuRjiheChHgdM+JyqdgNcmzZOX/tnl0JOiI7A==
 
+"@netlify/blobs@^8.1.0":
+  version "8.2.0"
+  resolved "https://registry.yarnpkg.com/@netlify/blobs/-/blobs-8.2.0.tgz#4cd6c82cbe7edff8476f67b4d390b08a97f8b210"
+  integrity sha512-9djLZHBKsoKk8XCgwWSEPK9QnT8qqxEQGuYh48gFIcNLvpBKkLnHbDZuyUxmNemCfDz7h0HnMXgSPnnUVgARhg==
+
 "@node-ipc/js-queue@2.0.3":
   version "2.0.3"
   resolved "https://registry.npmjs.org/@node-ipc/js-queue/-/js-queue-2.0.3.tgz"
