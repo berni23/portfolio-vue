@@ -1,2 +1,6 @@
 [build.environment]
   NODE_VERSION = "22"
+  # @achrinza/node-ipc (a transitive dep of the old vue-cli toolchain) declares
+  # engines <= node 19, which fails the install on node 22. The package is only
+  # used by the dev server, so skip the engine check rather than pin node back.
+  YARN_FLAGS = "--ignore-engines"
